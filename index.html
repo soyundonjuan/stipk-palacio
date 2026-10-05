@@ -1,0 +1,1320 @@
+<!DOCTYPE html><html class="dark" lang="es" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Stipk Palacio | Contador Público en Cartagena</title>
+<meta name="description" content="Contador público en Cartagena. Servicios de contabilidad, tributación, revisoría fiscal y auditoría para empresas. Agenda tu asesoría.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23031427'/%3E%3Cpath d='M31 10c-8 0-14 6-14 14 0 9 7 12 16 14 6 1 9 3 9 7 0 4-4 7-10 7-6 0-10-3-12-8l-6 2c2 8 9 12 18 12 10 0 17-6 17-14 0-9-7-12-16-14-7-2-9-3-9-7 0-3 3-6 8-6 6 0 10 2 12 7l6-2c-2-8-9-12-18-12z' fill='%23E4B25F'/%3E%3Cpath d='M28 12h8v40h-8z' fill='%23E4B25F'/%3E%3Cpath d='M20 24c0-7 6-13 14-13M44 40c0 7-6 13-14 13' fill='none' stroke='%23E4B25F' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+<style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #031427;
+      color: #d3e4fe;
+      font-family: 'Montserrat', sans-serif;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      scroll-behavior: smooth;
+    }
+    body {
+      min-height: 100vh;
+    }
+    #page-scroll {
+      height: 100vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-gutter: stable;
+      padding-top: 80px;
+      box-sizing: border-box;
+    }
+    header {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      z-index: 9999 !important;
+      width: 100% !important;
+      min-height: 80px;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px) scale(0.98);
+      filter: blur(6px);
+      transition: opacity 0.75s ease, transform 0.75s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.75s ease;
+      transition-delay: var(--reveal-delay, 0ms);
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease-out, opacity 0.3s ease;
+      opacity: 0;
+    }
+    .accordion-content.open {
+      max-height: 500px;
+      opacity: 1;
+    }
+    .floating-conversion-actions {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 1200;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .floating-conversion-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #0f2034;
+      color: #E4B25F;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.22);
+      border: 1px solid rgba(228, 178, 95, 0.25);
+      text-decoration: none;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .floating-conversion-actions a:hover {
+      transform: translateY(-2px);
+      background: #162d45;
+    }
+    .floating-conversion-actions a svg,
+    .floating-conversion-actions a .material-symbols-outlined {
+      width: 24px;
+      height: 24px;
+      font-size: 24px;
+      color: currentColor;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        filter: none;
+        transition: none;
+      }
+    }
+    @media (max-width: 640px) {
+      body {
+        padding-bottom: 88px;
+      }
+      .floating-conversion-actions {
+        display: none !important;
+      }
+      .mobile-bottom-nav {
+        position: fixed !important;
+        left: 12px;
+        right: 12px;
+        bottom: max(12px, env(safe-area-inset-bottom));
+        z-index: 2147483647;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 8px 10px 10px;
+        border-radius: 28px;
+        background: rgba(3, 20, 39, 0.9);
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow: 0 -8px 24px rgba(0,0,0,0.28);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        overflow: visible;
+        isolation: isolate;
+      }
+      .mobile-bottom-whatsapp {
+        position: relative;
+        z-index: 2;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        min-height: 52px;
+        padding: 0 18px;
+        border-radius: 999px;
+        background: linear-gradient(180deg, #39d48c 0%, #26bd74 100%);
+        color: #06182B;
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-decoration: none;
+        box-shadow: 0 8px 22px rgba(38, 189, 116, 0.25);
+      }
+      .mobile-bottom-whatsapp span {
+        position: relative;
+        z-index: 3;
+        display: inline-block;
+        color: #06182B;
+        font-size: 0.95rem;
+        font-weight: 700;
+        visibility: visible;
+        opacity: 1;
+      }
+      .mobile-bottom-whatsapp svg {
+        width: 24px;
+        height: 24px;
+        fill: currentColor;
+      }
+      .mobile-bottom-menu {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+      }
+      .mobile-bottom-menu a {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 78px;
+        border-radius: 18px;
+        color: #dfeaf9;
+        text-decoration: none;
+        font-size: 0.68rem;
+        font-weight: 600;
+        line-height: 1.2;
+        background: rgba(255,255,255,0.02);
+        gap: 4px;
+        isolation: isolate;
+      }
+      .mobile-bottom-menu a span:last-child {
+        position: relative;
+        z-index: 3;
+        display: block;
+        text-align: center;
+        color: #dfeaf9;
+        font-size: 0.68rem;
+        line-height: 1.2;
+        font-weight: 600;
+        visibility: visible;
+        opacity: 1;
+        filter: none !important;
+        -webkit-filter: none !important;
+        text-shadow: none;
+      }
+      .mobile-bottom-menu .material-symbols-outlined {
+        position: relative;
+        z-index: 3;
+        font-size: 28px;
+        line-height: 1;
+        color: #dfeaf9;
+        display: block;
+        filter: none !important;
+        -webkit-filter: none !important;
+      }
+      .mobile-bottom-nav,
+      .mobile-bottom-nav *,
+      .mobile-bottom-whatsapp,
+      .mobile-bottom-whatsapp *,
+      .mobile-bottom-menu,
+      .mobile-bottom-menu * {
+        filter: none !important;
+        -webkit-filter: none !important;
+        backdrop-filter: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#031427] text-on-surface antialiased">
+<header class="fixed top-0 left-0 w-full z-50 bg-[#031427]/95 backdrop-blur-xl border-b border-[#1a2b3f]/60 shadow-[0_2px_12px_rgba(0,0,0,0.4)]">
+<div class="h-20 max-w-[1200px] mx-auto px-4 lg:px-8 flex items-center justify-between gap-4">
+<a class="flex items-center gap-3 cursor-pointer" href="#hero-slider">
+<img alt="Stipk Palacio Díaz — Contador Público" class="h-11 sm:h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbtGFo7Ub8PAR4eoo8jKOrI8nDonZxAnGqtDk4o5MK0HU4MvJUMM-YulVAbMr6wfpyQxKf1VpFO8nmlZC5Fz2DqeNrnDDwuXM1IZCNtV-Y5cwGA9GbmQUhtLSMJn8JXtOtukqmMrtrkM8LAlglt4qBFZ2lGlJ3J9kDdC0Q4uMlv08dkS6W6VLxHd4ohpu9uJWgL5oGU4JiC9IMJB9-1RFFPd8YaFi-9bSR8VHVMojOJ-no6KMBBxpIV5Qw0JGemedLkcQ">
+</a>
+<nav class="hidden lg:flex items-center gap-6"><a class="text-[#E4B25F] font-bold text-sm transition-colors hover:text-white" href="#hero-slider">Inicio</a>
+<a class="text-on-surface-variant text-sm font-medium hover:text-white transition-colors" href="#servicios">Servicios</a>
+<a class="text-on-surface-variant text-sm font-medium hover:text-white transition-colors" href="#sobre-mi">Sobre mí</a>
+<a class="text-on-surface-variant text-sm font-medium hover:text-white transition-colors" href="#preguntas-frecuentes">Preguntas frecuentes</a></nav>
+<div class="flex items-center gap-3">
+<a class="hidden sm:inline-flex items-center gap-2 h-11 px-4 rounded-xl bg-[#0f2034] text-[#E4B25F] text-sm font-semibold hover:bg-[#1a2b3f] transition-all cursor-pointer" href="https://wa.me/573135829941" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5 shrink-0 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path></svg>
+<span class="">WhatsApp</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-xl bg-[#E4B25F] text-[#06182B] text-sm font-bold shadow-md hover:bg-[#f1be6a] transition-all cursor-pointer" href="https://calendar.app.google/cgFFiYMX15akhNwZ9" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[19px]">calendar_month</span>
+<span class="">Agendar asesoría gratis</span>
+</a>
+</div>
+</div>
+</header>
+<div class="floating-conversion-actions" aria-label="Acciones de contacto">
+  <a href="https://wa.me/573135829941" rel="noopener noreferrer" target="_blank" aria-label="WhatsApp" title="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path></svg>
+  </a>
+  <a href="https://calendar.app.google/cgFFiYMX15akhNwZ9" rel="noopener noreferrer" target="_blank" aria-label="Agendar asesoría" title="Agendar asesoría">
+    <span class="material-symbols-outlined" aria-hidden="true">calendar_month</span>
+  </a>
+</div>
+<div id="page-scroll">
+<!-- SECCIÓN HERO: CARRUSEL AUTOMÁTICO DE 2 SLIDES -->
+<section class="relative w-full overflow-hidden bg-[#06182B] py-10 lg:py-16 mt-0" id="hero-slider">
+<div class="max-w-[1200px] mx-auto px-4 lg:px-8 relative z-10">
+<!-- VIEWPORT DEL CARRUSEL -->
+<div class="w-full overflow-hidden rounded-2xl">
+<div class="flex w-[200%] transition-transform duration-700 ease-out" id="hero-slider-track" style="transform: translateX(-50%);">
+<!-- SLIDE 1: POSICIONAMIENTO Y RESPALDO -->
+<div class="w-1/2 shrink-0 flex flex-col justify-center pr-2 lg:pr-6" id="hero-slide-1">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[580px]">
+<div class="lg:col-span-7 flex flex-col space-y-4">
+<div class="inline-flex items-center gap-2 self-start px-3.5 py-1.5 rounded-full bg-[#1a2b3f] text-[#E4B25F]">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="text-xs uppercase tracking-wider font-semibold">10 AÑOS DE EXPERIENCIA COMPROBADA</span>
+</div>
+<h1 class="text-3xl sm:text-4xl lg:text-5xl text-white font-bold tracking-tight leading-tight">
+                  Contador público en <span class="text-[#E4B25F]">Cartagena</span> para tu empresa
+                </h1>
+<p class="text-base lg:text-lg text-on-surface-variant max-w-xl">
+                  Contabilidad, tributación, revisoría fiscal y auditoría para empresas que necesitan claridad y respaldo profesional en la Costa Caribe.
+                </p>
+<blockquote class="border-l-2 border-[#E4B25F] pl-4 py-1.5 text-white/90 italic text-sm sm:text-base bg-[#0b1c30]/50 rounded-r-lg max-w-xl">
+                  “Soy Stipk, soy contador, tengo experiencia y puedo ayudarte con los números de tu empresa.”
+                </blockquote>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2">
+<div class="p-3 rounded-xl bg-[#0f2034] flex flex-col gap-1 border border-[#1a2b3f]/50">
+<span class="material-symbols-outlined text-[#E4B25F] text-[20px]">history_edu</span>
+<span class="text-xs text-white font-semibold leading-tight">10 años de experiencia</span>
+</div>
+<div class="p-3 rounded-xl bg-[#0f2034] flex flex-col gap-1 border border-[#1a2b3f]/50">
+<span class="material-symbols-outlined text-[#E4B25F] text-[20px]">policy</span>
+<span class="text-xs text-white font-semibold leading-tight">Revisoría y Auditoría</span>
+</div>
+<div class="p-3 rounded-xl bg-[#0f2034] flex flex-col gap-1 border border-[#1a2b3f]/50">
+<span class="material-symbols-outlined text-[#E4B25F] text-[20px]">devices</span>
+<span class="text-xs text-white font-semibold leading-tight">Atención virtual y presencial</span>
+</div>
+<div class="p-3 rounded-xl bg-[#0f2034] flex flex-col gap-1 border border-[#1a2b3f]/50">
+<span class="material-symbols-outlined text-[#E4B25F] text-[20px]">location_on</span>
+<span class="text-xs text-white font-semibold leading-tight">Cobertura regional</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-3">
+<a class="inline-flex items-center justify-center h-14 px-6 rounded-xl bg-[#E4B25F] text-[#06182B] text-sm sm:text-base font-bold shadow-lg hover:bg-[#f1be6a] transition-all cursor-pointer group" href="https://calendar.app.google/cgFFiYMX15akhNwZ9" rel="noopener noreferrer" target="_blank">
+<span class="">Agenda tu primera asesoría completamente gratis</span>
+<span class="material-symbols-outlined ml-2 text-[20px] transition-transform group-hover:translate-x-1">calendar_month</span>
+</a>
+<a class="inline-flex items-center justify-center h-14 px-6 rounded-xl bg-[#0f2034] text-[#E4B25F] text-sm sm:text-base font-semibold hover:bg-[#1a2b3f] transition-all cursor-pointer" href="https://wa.me/573135829941" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5 mr-2 shrink-0 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path></svg>
+<span class="">Hablar por WhatsApp</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-5 relative flex justify-center">
+<div class="relative w-full max-w-[380px] rounded-2xl overflow-hidden bg-[#1a2b3f] shadow-2xl p-2 border border-[#E4B25F]/20">
+<div class="relative rounded-xl overflow-hidden aspect-[4/5]">
+<img alt="Stipk Palacio Díaz — Contador Público" class="w-full h-full object-cover object-top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAckzW32dHRZjBnIaMiM9NkpyiltfmaikfN-g6ZrX_mKSlYUz4sCnuthvF1z7F_UwnRr1-x94Y0jwuoUycvj0kq_MUfYj_ol1rR6SYMPRllW3uWwuaPK2Am2bGxRmo80uhnMRbfutVGlVfwWJo5Sj-c9AaC3AQ75ydaJSKVYSTA0AtKx1JydZr2cSFa2892vm4Z0zSF8THJo0RCUZePtC-aCUMeHFNJwswHp88rPuj0bX4UZO8Ue7nuH6ChoJFN2MKf4Z7bDn4MASvBxlQ">
+<div class="absolute inset-0 bg-gradient-to-t from-[#000f21]/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 p-3.5 rounded-xl bg-[#0f2034]/95 backdrop-blur-md shadow-lg flex items-center justify-between border border-[#1a2b3f]">
+<div>
+<p class="text-[11px] text-on-surface-variant uppercase tracking-wider font-semibold">PROFESIONALISMO Y RESPALDO</p>
+<p class="text-base text-[#E4B25F] font-bold">Stipk Palacio Díaz</p>
+<p class="text-xs text-tertiary">Contador Público · Esp. Auditoría Forense</p>
+</div>
+<div class="w-9 h-9 rounded-full bg-[#E4B25F]/10 flex items-center justify-center text-[#E4B25F]">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SLIDE 2: CONVERSIÓN DIRECTA -->
+<div class="w-1/2 shrink-0 flex flex-col justify-center pl-2 lg:pl-6" id="hero-slide-2">
+<div class="rounded-3xl bg-[#071A2E] p-6 lg:p-10 shadow-2xl border border-[#1a2b3f]/80 min-h-[580px] flex items-center">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full">
+<div class="lg:col-span-5 order-2 lg:order-1 flex justify-center">
+<div class="relative w-full max-w-[340px] rounded-2xl overflow-hidden bg-[#1a2b3f] shadow-2xl p-2 border border-[#E4B25F]/20">
+<div class="relative rounded-xl overflow-hidden aspect-[4/5]">
+<img alt="Stipk Palacio Díaz — Asesoría Contable" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJOoICiTQBRHl_3gT_sAImuTgXM1RK28hAud6YyYIIK6XDmme17LBj3irxlMgd7z7EhCITqEsTZCIDPkJKRK669RiqaSE8BKLxUghsD_i1Aqo4zt3ZRFYxZ8yrB75QibgAN92L0TrKIQSLTlO9buwcuSei64vDRi2tAPPvxUkQGFoLkhEWcRNVSpoU_iIa7wvQO4-cP_fNH1YElIooAXXcI2-7DxGxzGWxwjltzUmEhM57xaDm5y6njBC8FLu_i2Z71MRFQ-_iAvf-9bY">
+<div class="absolute inset-0 bg-gradient-to-t from-[#000f21]/80 via-transparent to-transparent"></div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 order-1 lg:order-2 space-y-5">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1a2b3f] text-[#E4B25F]">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span class="text-xs uppercase tracking-wider font-semibold">10 años de experiencia profesional</span>
+</div>
+<h2 class="text-3xl sm:text-4xl lg:text-5xl text-white font-bold tracking-tight leading-tight">
+                    ¿Hablamos de los números de tu empresa?
+                  </h2>
+<p class="text-base lg:text-lg text-on-surface-variant max-w-xl">
+                    Agenda tu primera asesoría completamente gratis y cuéntame qué necesitas resolver. Analicemos juntos tu contabilidad o tus requerimientos tributarios.
+                  </p>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+<a class="inline-flex items-center justify-center gap-2 h-14 px-8 rounded-xl bg-[#E4B25F] text-[#06182B] text-sm sm:text-base font-bold shadow-md hover:bg-[#f1be6a] transition-all cursor-pointer group" href="https://calendar.app.google/cgFFiYMX15akhNwZ9" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span class="">Agendar asesoría gratuita</span>
+</a>
+<a class="inline-flex items-center justify-center h-14 px-8 rounded-xl bg-[#0f2034] text-[#E4B25F] text-sm sm:text-base font-semibold hover:bg-[#1a2b3f] transition-all cursor-pointer" href="https://wa.me/573135829941" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5 mr-2 shrink-0 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path></svg>
+<span class="">Hablar por WhatsApp</span>
+</a>
+</div>
+<div class="pt-3 flex flex-wrap items-center gap-4 text-on-surface-variant text-xs">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[#E4B25F] text-[16px]">lock</span> Sesión 100% confidencial</span>
+<span class="hidden sm:inline">·</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[#E4B25F] text-[16px]">handshake</span> Sin compromiso comercial</span>
+<span class="hidden sm:inline">·</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[#E4B25F] text-[16px]">insights</span> Diagnóstico inicial claro</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- CONTROLES FLECHAS ANTERIOR / SIGUIENTE -->
+<button aria-label="Slide anterior" class="absolute left-2 lg:left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-[#0f2034]/90 text-[#E4B25F] flex items-center justify-center hover:bg-[#E4B25F] hover:text-[#06182B] transition-all shadow-lg border border-[#1a2b3f] cursor-pointer" id="hero-prev-btn" type="button">
+<span class="material-symbols-outlined text-[24px]">chevron_left</span>
+</button>
+<button aria-label="Siguiente slide" class="absolute right-2 lg:right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-[#0f2034]/90 text-[#E4B25F] flex items-center justify-center hover:bg-[#E4B25F] hover:text-[#06182B] transition-all shadow-lg border border-[#1a2b3f] cursor-pointer" id="hero-next-btn" type="button">
+<span class="material-symbols-outlined text-[24px]">chevron_right</span>
+</button>
+<!-- INDICADORES / PUNTOS DE PROGRESO -->
+<div class="flex items-center justify-center gap-3 mt-6">
+<button aria-label="Slide 1" class="w-3 h-2 rounded-full bg-[#26364a] hover:bg-[#2a3a4f] transition-all duration-300 cursor-pointer" id="hero-dot-1" type="button"></button>
+<button aria-label="Slide 2" class="w-8 h-2 rounded-full bg-[#E4B25F] transition-all duration-300 cursor-pointer" id="hero-dot-2" type="button"></button>
+</div>
+</div>
+</section>
+<!-- SECCIÓN: AUTODIAGNÓSTICO INMEDIATO / ¿QUÉ NECESITAS RESOLVER? -->
+<section class="w-full bg-[#000f21] py-16 lg:py-24">
+<div class="max-w-[1200px] mx-auto px-4 lg:px-8">
+<div class="max-w-2xl mx-auto text-center space-y-3 mb-14">
+<span class="text-xs text-[#E4B25F] uppercase tracking-widest font-semibold">AUTODIAGNÓSTICO INMEDIATO</span>
+<h2 class="text-2xl sm:text-3xl lg:text-4xl text-white font-bold tracking-tight">
+          ¿Qué necesitas resolver?
+        </h2>
+<p class="text-base text-on-surface-variant">
+          Selecciona tu situación actual para ver la ruta de solución directa recomendada.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Tarjeta 1 -->
+<div class="p-6 sm:p-7 rounded-2xl bg-[#0b1c30] hover:bg-[#0f2034] transition-all flex flex-col justify-between border border-[#1a2b3f]/50 group">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-[#E4B25F] text-[26px]">folder_open</span>
+<span class="material-symbols-outlined text-white/40 text-[20px] group-hover:text-[#E4B25F] group-hover:translate-x-1 transition-all">arrow_forward</span>
+</div>
+<div class="space-y-3">
+<h3 class="text-lg text-white font-bold tracking-tight leading-snug">"Necesito organizar mi contabilidad"</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+Solución: <strong class="text-white font-semibold">Outsourcing Contable</strong> continuo con reportes mensuales claros.
+</p>
+</div>
+</div>
+<!-- Tarjeta 2 -->
+<div class="p-6 sm:p-7 rounded-2xl bg-[#0b1c30] hover:bg-[#0f2034] transition-all flex flex-col justify-between border border-[#1a2b3f]/50 group">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-[#E4B25F] text-[26px]">calendar_today</span>
+<span class="material-symbols-outlined text-white/40 text-[20px] group-hover:text-[#E4B25F] group-hover:translate-x-1 transition-all">arrow_forward</span>
+</div>
+<div class="space-y-3">
+<h3 class="text-lg text-white font-bold tracking-tight leading-snug">"Tengo obligaciones tributarias pendientes"</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+Solución: <strong class="text-white font-semibold">Tributación</strong>, saneamiento fiscal y presentación DIAN sin multas.
+</p>
+</div>
+</div>
+<!-- Tarjeta 3 -->
+<div class="p-6 sm:p-7 rounded-2xl bg-[#0b1c30] hover:bg-[#0f2034] transition-all flex flex-col justify-between border border-[#1a2b3f]/50 group">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-[#E4B25F] text-[26px]">balance</span>
+<span class="material-symbols-outlined text-white/40 text-[20px] group-hover:text-[#E4B25F] group-hover:translate-x-1 transition-all">arrow_forward</span>
+</div>
+<div class="space-y-3">
+<h3 class="text-lg text-white font-bold tracking-tight leading-snug">"Necesito saber si debo tener revisor fiscal"</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+Solución: <strong class="text-white font-semibold">Revisoría Fiscal</strong> y evaluación de topes de ingresos o activos legales.
+</p>
+</div>
+</div>
+<!-- Tarjeta 4 -->
+<div class="p-6 sm:p-7 rounded-2xl bg-[#0b1c30] hover:bg-[#0f2034] transition-all flex flex-col justify-between border border-[#1a2b3f]/50 group">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-[#E4B25F] text-[26px]">find_in_page</span>
+<span class="material-symbols-outlined text-white/40 text-[20px] group-hover:text-[#E4B25F] group-hover:translate-x-1 transition-all">arrow_forward</span>
+</div>
+<div class="space-y-3">
+<h3 class="text-lg text-white font-bold tracking-tight leading-snug">"Necesito revisar información financiera"</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+Solución: <strong class="text-white font-semibold">Auditoría</strong> y peritaje contable con informe técnico detallado.
+</p>
+</div>
+</div>
+<!-- Tarjeta 5 -->
+<div class="p-6 sm:p-7 rounded-2xl bg-[#0b1c30] hover:bg-[#0f2034] transition-all flex flex-col justify-between border border-[#1a2b3f]/50 group">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-[#E4B25F] text-[26px]">store</span>
+<span class="material-symbols-outlined text-white/40 text-[20px] group-hover:text-[#E4B25F] group-hover:translate-x-1 transition-all">arrow_forward</span>
+</div>
+<div class="space-y-3">
+<h3 class="text-lg text-white font-bold tracking-tight leading-snug">"Estoy creando una empresa"</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+Solución: <strong class="text-white font-semibold">Constitución de Empresas</strong>, estatutos y formalización completa.
+</p>
+</div>
+</div>
+<!-- Tarjeta 6 (Destacada / Consulta abierta) -->
+<div class="p-6 sm:p-7 rounded-2xl bg-[#0b1c30] hover:bg-[#0f2034] transition-all flex flex-col justify-between border border-[#1a2b3f]/70 group">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-[#E4B25F] text-[26px]">help</span>
+<span class="material-symbols-outlined text-white/40 text-[20px] group-hover:text-[#E4B25F] group-hover:translate-x-1 transition-all">arrow_forward</span>
+</div>
+<div class="space-y-2">
+<h3 class="text-lg text-[#E4B25F] font-bold tracking-tight leading-snug">"No sé exactamente qué necesito"</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+Te orientamos en una sesión de 20 minutos sin costo.
+</p>
+</div>
+</div>
+<div class="pt-4">
+<a class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#E4B25F] hover:text-[#f1be6a] transition-colors" href="https://calendar.app.google/cgFFiYMX15akhNwZ9" rel="noopener noreferrer" target="_blank">
+<span>Quiero orientación</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Banner inferior -->
+<div class="mt-12 p-8 rounded-2xl bg-[#0f2034] flex flex-col md:flex-row items-center justify-between gap-6 border border-[#1a2b3f]">
+<div class="space-y-1 text-center md:text-left">
+<p class="text-lg sm:text-xl text-[#E4B25F] font-bold">Tus números deben darte claridad, no más preguntas.</p>
+<p class="text-sm text-on-surface-variant">Evita pagos en exceso, multas tributarias y estrés en tus juntas directivas.</p>
+</div>
+<a class="inline-flex items-center justify-center h-12 px-6 rounded-xl bg-[#1a2b3f] text-[#E4B25F] text-sm font-bold hover:bg-[#E4B25F] hover:text-[#06182B] transition-all shrink-0 cursor-pointer" href="https://wa.me/573135829941" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5 mr-2 shrink-0 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path></svg>
+<span class="">Hablar con Stipk</span>
+</a>
+</div>
+</div>
+</section>
+<!-- SECCIÓN: PROPUESTA DE VALOR -->
+<section class="w-full bg-[#031427] py-16 lg:py-24">
+<div class="max-w-[1200px] mx-auto px-4 lg:px-8">
+<div class="max-w-3xl mb-14 space-y-3">
+<span class="text-xs text-secondary uppercase tracking-widest font-semibold">Propuesta de Valor</span>
+<h2 class="text-2xl sm:text-3xl lg:text-4xl text-white font-bold tracking-tight">
+          Respaldo profesional para entender y gestionar tus números
+        </h2>
+<p class="text-base text-on-surface-variant">
+          Acompaño a empresas en sus procesos contables, tributarios y de control con criterio técnico cercano y adaptado a Cartagena y la Costa Caribe.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-8 rounded-2xl bg-[#0b1c30] flex flex-col justify-between space-y-6 border border-[#1a2b3f]/50">
+<div class="w-14 h-14 rounded-2xl bg-[#E4B25F]/10 flex items-center justify-center text-[#E4B25F]">
+<span class="material-symbols-outlined text-[32px]">visibility</span>
+</div>
+<div class="space-y-3">
+<span class="text-xs text-[#E4B25F] tracking-widest uppercase font-semibold">Pilar 01</span>
+<h3 class="text-xl text-white font-bold">CLARIDAD</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+              Información ordenada y reportes comprensibles que te permitan comprender mejor la situación económica real de tu empresa sin tecnicismos confusos.
+            </p>
+</div>
+<div class="h-1 w-16 bg-[#E4B25F] rounded-full"></div>
+</div>
+<div class="p-8 rounded-2xl bg-[#0b1c30] flex flex-col justify-between space-y-6 border border-[#1a2b3f]/50">
+<div class="w-14 h-14 rounded-2xl bg-[#E4B25F]/10 flex items-center justify-center text-[#E4B25F]">
+<span class="material-symbols-outlined text-[32px]">account_tree</span>
+</div>
+<div class="space-y-3">
+<span class="text-xs text-[#E4B25F] tracking-widest uppercase font-semibold">Pilar 02</span>
+<h3 class="text-xl text-white font-bold">CONTROL</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+              Seguimiento riguroso de tus procesos, conciliaciones periódicas y cumplimiento puntual de todas tus obligaciones contables y tributarias nacionales y locales.
+            </p>
+</div>
+<div class="h-1 w-16 bg-[#E4B25F] rounded-full"></div>
+</div>
+<div class="p-8 rounded-2xl bg-[#0b1c30] flex flex-col justify-between space-y-6 border border-[#1a2b3f]/50">
+<div class="w-14 h-14 rounded-2xl bg-[#E4B25F]/10 flex items-center justify-center text-[#E4B25F]">
+<span class="material-symbols-outlined text-[32px]">verified_user</span>
+</div>
+<div class="space-y-3">
+<span class="text-xs text-[#E4B25F] tracking-widest uppercase font-semibold">Pilar 03</span>
+<h3 class="text-xl text-white font-bold">RESPALDO</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+              Acompañamiento profesional permanente con criterio técnico y forensic insight para tomar decisiones estratégicas con absoluta tranquilidad jurídica.
+            </p>
+</div>
+<div class="h-1 w-16 bg-[#E4B25F] rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN: CATÁLOGO DE SERVICIOS (SLIDER DE 4 SLIDES) -->
+<section class="w-full bg-[#000f21] py-16 lg:py-24 relative overflow-hidden" id="servicios">
+<div class="max-w-[1200px] mx-auto px-4 lg:px-8 relative">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+<div class="max-w-3xl space-y-3">
+<span class="text-xs text-secondary uppercase tracking-widest font-semibold">Portafolio Integral</span>
+<h2 class="text-2xl sm:text-3xl lg:text-4xl text-white font-bold tracking-tight">
+            Servicios contables y tributarios para empresas en Cartagena
+          </h2>
+<p class="text-base text-on-surface-variant">
+            Encuentra el acompañamiento que tu empresa necesita en contabilidad, tributación, auditoría y control corporativo.
+          </p>
+</div>
+<!-- Flechas de navegación slider -->
+<div class="flex items-center gap-3 shrink-0">
+<button aria-label="Servicio anterior" class="w-11 h-11 rounded-xl bg-[#0f2034] text-[#E4B25F] flex items-center justify-center hover:bg-[#E4B25F] hover:text-[#06182B] transition-all shadow-md border border-[#1a2b3f] cursor-pointer" id="services-prev-btn" type="button">
+<span class="material-symbols-outlined text-[22px]">chevron_left</span>
+</button>
+<button aria-label="Siguiente servicio" class="w-11 h-11 rounded-xl bg-[#0f2034] text-[#E4B25F] flex items-center justify-center hover:bg-[#E4B25F] hover:text-[#06182B] transition-all shadow-md border border-[#1a2b3f] cursor-pointer" id="services-next-btn" type="button">
+<span class="material-symbols-outlined text-[22px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- VIEWPORT DEL CARRUSEL DE SERVICIOS -->
+<div class="overflow-hidden rounded-2xl">
+<div class="flex transition-transform duration-500 ease-out" id="services-track" style="transform: translateX(0%);">
+<!-- SERVICIO 1 -->
+<div class="w-full md:w-1/2 shrink-0 px-2 sm:px-3">
+<div class="p-8 rounded-2xl bg-[#0f2034] flex flex-col justify-between border border-[#1a2b3f] space-y-6 h-full min-h-[460px]">
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-[#1a2b3f] flex items-center justify-center text-[#E4B25F]">
+<span class="material-symbols-outlined text-[24px]">calculate</span>
+</div>
+<div>
+<span class="text-xs text-[#E4B25F] uppercase font-semibold">Categoría 1</span>
+<h3 class="text-xl text-white font-bold">Contabilidad Integral</h3>
+</div>
+</div>
+<div class="space-y-2 pt-2">
+<h4 class="text-base text-secondary font-semibold">Outsourcing contable</h4>
+<p class="text-sm text-on-surface-variant">
+                    Gestión y acompañamiento contable integral para empresas que necesitan mantener organizada, conciliada y actualizada su información bajo normas NIIF vigentes.
+                  </p>
+</div>
+<ul class="space-y-2 pt-2 text-on-surface-variant text-sm">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#E4B25F] text-[18px]">check_circle</span>
+<span class="">Registro sistemático de operaciones comerciales</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#E4B25F] text-[18px]">check_circle</span>
+<span class="">Conciliaciones bancarias y de cartera mensuales</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#E4B25F] text-[18px]">check_circle</span>
+<span class="">Emisión de estados financieros con notas explicativas</span>
+</li>
+</ul>
+</div>
+<a class="inline-flex items-center justify-between p-4 rounded-xl bg-[#1a2b3f] text-[#E4B25F] text-sm font-semibold hover:bg-[#E4B25F] hover:text-[#06182B] transition-all cursor-pointer mt-4" href="https://wa.me/573135829941" rel="noopener noreferrer" target="_blank">
+<span class="">Quiero conocer este servicio</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- SERVICIO 2 -->
+<div class="w-full md:w-1/2 shrink-0 px-2 sm:px-3">
+<div class="p-8 rounded-2xl bg-[#0f2034] flex flex-col justify-between border border-[#1a2b3f] space-y-6 h-full min-h-[460px]">
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-[#1a2b3f] flex items-center justify-center text-[#E4B25F]">
+<span class="material-symbols-outlined text-[24px]">receipt</span>
+</div>
+<div>
+<span class="text-xs text-[#E4B25F] uppercase font-semibold">Categoría 2</span>
+<h3 class="text-xl text-white font-bold">Gestión Tributaria</h3>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant">
+                  Planificación, cálculo y presentación de todas tus obligaciones impositivas municipales y nacionales ante la DIAN.
+                </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+<div class="p-3 rounded-xl bg-[#1a2b3f]">
+<p class="text-sm text-white font-semibold">Liquidación de impuestos</p>
+<p class="text-xs text-on-surface-variant">IVA, Retención, ICA Cartagena</p>
+</div>
+<div class="p-3 rounded-xl bg-[#1a2b3f]">
+<p class="text-sm text-white font-semibold">Información exógena</p>
+<p class="text-xs text-on-surface-variant">Medios magnéticos DIAN</p>
+</div>
+<div class="p-3 rounded-xl bg-[#1a2b3f]">
+<p class="text-sm text-white font-semibold">Declaración de renta</p>
+<p class="text-xs text-on-surface-variant">Personas jurídicas y naturales</p>
+</div>
+<div class="p-3 rounded-xl bg-[#1a2b3f]">
+<p class="text-sm text-white font-semibold">Facturación y Nómina</p>
+<p class="text-xs text-on-surface-variant">Emisión electrónica obligatoria</p>
+</div>
+</div>
+</div>
+<a class="inline-flex items-center justify-between p-4 rounded-xl bg-[#1a2b3f] text-[#E4B25F] text-sm font-semibold hover:bg-[#E4B25F] hover:text-[#06182B] transition-all cursor-pointer mt-4" href="https://wa.me/573135829941" rel="noopener noreferrer" target="_blank">
+<span class="">Consultar obligaciones tributarias</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- SERVICIO 3 -->
+<div class="w-full md:w-1/2 shrink-0 px-2 sm:px-3">
+<div class="p-8 rounded-2xl bg-[#0f2034] flex flex-col justify-between border border-[#1a2b3f] space-y-6 h-full min-h-[460px]">
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-[#1a2b3f] flex items-center justify-center text-[#E4B25F]">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div>
+<span class="text-xs text-[#E4B25F] uppercase font-semibold">Categoría 3</span>
+<h3 class="text-xl text-white font-bold">Auditoría y Control</h3>
+</div>
+</div>
+<div class="space-y-3 pt-2">
+<div class="p-4 rounded-xl bg-[#1a2b3f]">
+<h4 class="text-base text-secondary font-semibold">Revisoría Fiscal</h4>
+<p class="text-sm text-on-surface-variant mt-1">Dictamen independiente y fiscalización continua conforme al Código de Comercio para asambleas y juntas de socios.</p>
+</div>
+<div class="p-4 rounded-xl bg-[#1a2b3f]">
+<h4 class="text-base text-secondary font-semibold">Auditoría Forense</h4>
+<p class="text-sm text-on-surface-variant mt-1">Investigación analítica y peritaje contable para esclarecer discrepancias, evaluar fraudes internos y emitir informes técnicos.</p>
+</div>
+</div>
+</div>
+<a class="inline-flex items-center justify-between p-4 rounded-xl bg-[#1a2b3f] text-[#E4B25F] text-sm font-semibold hover:bg-[#E4B25F] hover:text-[#06182B] transition-all cursor-pointer mt-4" href="https://calendar.app.google/cgFFiYMX15akhNwZ9" rel="noopener noreferrer" target="_blank">
+<span class="">Agendar diagnóstico de control</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- SERVICIO 4 -->
+<div class="w-full md:w-1/2 shrink-0 px-2 sm:px-3">
+<div class="p-8 rounded-2xl bg-[#0f2034] flex flex-col justify-between border border-[#1a2b3f] space-y-6 h-full min-h-[460px]">
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-[#1a2b3f] flex items-center justify-center text-[#E4B25F]">
+<span class="material-symbols-outlined text-[24px]">domain</span>
+</div>
+<div>
+<span class="text-xs text-[#E4B25F] uppercase font-semibold">Categoría 4</span>
+<h3 class="text-xl text-white font-bold">Constitución de Empresas</h3>
+</div>
+</div>
+<div class="space-y-2 pt-2">
+<h4 class="text-base text-secondary font-semibold">Formalización y Estructura Societaria</h4>
+<p class="text-sm text-on-surface-variant">
+                    Asesoramiento desde cero para crear tu empresa (S.A.S., Ltda.) con la estructura estatutaria correcta ante la Cámara de Comercio de Cartagena y la DIAN.
+                  </p>
+</div>
+<ul class="space-y-2 pt-2 text-on-surface-variant text-sm">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#E4B25F] text-[18px]">check_circle</span>
+<span class="">Estatutos y registro mercantil en Cámara de Comercio</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#E4B25F] text-[18px]">check_circle</span>
+<span class="">Apertura de RUT, firmas electrónicas y responsabilidades</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#E4B25F] text-[18px]">check_circle</span>
+<span class="">Habilitación de facturador electrónico inicial</span>
+</li>
+</ul>
+</div>
+<a class="inline-flex items-center justify-between p-4 rounded-xl bg-[#1a2b3f] text-[#E4B25F] text-sm font-semibold hover:bg-[#E4B25F] hover:text-[#06182B] transition-all cursor-pointer mt-4" href="https://wa.me/573135829941" rel="noopener noreferrer" target="_blank">
+<span class="">Iniciar constitución de empresa</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- DOTS INDICADORES DE SERVICIOS -->
+<div class="flex items-center justify-center gap-2.5 mt-8" id="services-dots-container">
+<button aria-label="Servicio 1" class="w-8 h-2 rounded-full bg-[#E4B25F] transition-all duration-300 cursor-pointer" data-service-dot="0"></button>
+<button aria-label="Servicio 2" class="w-3 h-2 rounded-full bg-[#26364a] hover:bg-[#2a3a4f] transition-all duration-300 cursor-pointer" data-service-dot="1"></button>
+<button aria-label="Servicio 3" class="w-3 h-2 rounded-full bg-[#26364a] hover:bg-[#2a3a4f] transition-all duration-300 cursor-pointer" data-service-dot="2"></button>
+<button aria-label="Servicio 4" class="w-3 h-2 rounded-full bg-[#26364a] hover:bg-[#2a3a4f] transition-all duration-300 cursor-pointer" data-service-dot="3"></button>
+</div>
+</div>
+</section>
+<!-- SECCIÓN: SOBRE MÍ -->
+<section class="w-full bg-[#031427] py-16 lg:py-24" id="sobre-mi">
+<div class="max-w-[1200px] mx-auto px-4 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-5 order-2 lg:order-1">
+<div class="relative rounded-2xl overflow-hidden bg-[#1a2b3f] shadow-2xl p-2 border border-[#E4B25F]/20">
+<div class="relative rounded-xl overflow-hidden aspect-[3/4]">
+<img alt="Stipk Palacio Díaz — Auditor Forense y Revisor Fiscal" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJOoICiTQBRHl_3gT_sAImuTgXM1RK28hAud6YyYIIK6XDmme17LBj3irxlMgd7z7EhCITqEsTZCIDPkJKRK669RiqaSE8BKLxUghsD_i1Aqo4zt3ZRFYxZ8yrB75QibgAN92L0TrKIQSLTlO9buwcuSei64vDRi2tAPPvxUkQGFoLkhEWcRNVSpoU_iIa7wvQO4-cP_fNH1YElIooAXXcI2-7DxGxzGWxwjltzUmEhM57xaDm5y6njBC8FLu_i2Z71MRFQ-_iAvf-9bY">
+<div class="absolute inset-0 bg-gradient-to-t from-[#000f21]/80 via-transparent to-transparent"></div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 order-1 lg:order-2 space-y-6">
+<span class="text-xs text-secondary uppercase tracking-widest font-semibold">Trayectoria y Acreditación</span>
+<h2 class="text-2xl sm:text-3xl lg:text-4xl text-white font-bold tracking-tight">
+            Contador público con experiencia en Cartagena
+          </h2>
+<p class="text-base text-on-surface-variant leading-relaxed">
+            Soy Stipk Palacio Díaz, contador con 10 años de experiencia profesional, especializado en revisoría fiscal y auditoría forense. Acompaño a empresas en la gestión de sus procesos contables, tributarios y de control, brindando información y respaldo profesional para una mejor comprensión de sus números y una toma de decisiones más clara.
+          </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5 py-2">
+<div class="p-4 rounded-xl bg-[#0b1c30] border border-[#1a2b3f]/60 hover:border-[#E4B25F]/30 transition-all flex flex-col items-center justify-center text-center min-h-[120px] h-full shadow-md">
+<span class="material-symbols-outlined text-[#E4B25F] text-[24px] mb-2">history_edu</span>
+<span class="text-lg text-white font-bold tracking-tight block leading-tight">+10 años</span>
+<span class="text-[11px] text-on-surface-variant uppercase tracking-wider font-medium mt-1.5 block">De Experiencia</span>
+</div>
+<div class="p-4 rounded-xl bg-[#0b1c30] border border-[#1a2b3f]/60 hover:border-[#E4B25F]/30 transition-all flex flex-col items-center justify-center text-center min-h-[120px] h-full shadow-md">
+<span class="material-symbols-outlined text-[#E4B25F] text-[24px] mb-2">policy</span>
+<span class="text-base text-white font-bold tracking-tight block leading-tight">Revisoría Fiscal</span>
+<span class="text-[11px] text-on-surface-variant uppercase tracking-wider font-medium mt-1.5 block">Especialización</span>
+</div>
+<div class="p-4 rounded-xl bg-[#0b1c30] border border-[#1a2b3f]/60 hover:border-[#E4B25F]/30 transition-all flex flex-col items-center justify-center text-center min-h-[120px] h-full shadow-md">
+<span class="material-symbols-outlined text-[#E4B25F] text-[24px] mb-2">troubleshoot</span>
+<span class="text-base text-white font-bold tracking-tight block leading-tight">Auditoría Forense</span>
+<span class="text-[11px] text-on-surface-variant uppercase tracking-wider font-medium mt-1.5 block">Especialización</span>
+</div>
+<div class="p-4 rounded-xl bg-[#0b1c30] border border-[#1a2b3f]/60 hover:border-[#E4B25F]/30 transition-all flex flex-col items-center justify-center text-center min-h-[120px] h-full shadow-md">
+<span class="material-symbols-outlined text-[#E4B25F] text-[24px] mb-2">verified</span>
+<span class="text-lg text-white font-bold tracking-tight block leading-tight">+100 pymes</span>
+<span class="text-[11px] text-on-surface-variant uppercase tracking-wider font-medium mt-1.5 block">Atendidas</span>
+</div>
+</div>
+<div class="pt-2">
+<a class="inline-flex items-center justify-center h-14 px-8 rounded-xl bg-[#E4B25F] text-[#06182B] text-sm sm:text-base font-bold shadow-md hover:bg-[#f1be6a] transition-all cursor-pointer" href="https://wa.me/573135829941" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined mr-2 text-[20px]">handshake</span>
+<span class="">Conocer cómo puedo ayudarte</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN: COBERTURA REGIONAL -->
+<section class="w-full bg-[#000f21] py-16 lg:py-24" id="cobertura">
+<div class="max-w-[1200px] mx-auto px-4 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<div class="lg:col-span-6 space-y-5">
+<span class="text-xs text-secondary uppercase tracking-widest font-semibold">Presencia y Modalidades</span>
+<h2 class="text-2xl sm:text-3xl lg:text-4xl text-white font-bold tracking-tight">
+            Servicios contables en Cartagena y alrededores
+          </h2>
+<p class="text-base text-on-surface-variant">
+            Atiendo de manera virtual y presencial a empresas ubicadas en los principales núcleos industriales y comerciales de Bolívar. También puedo atenderte de manera virtual si te encuentras fuera de estas zonas o en cualquier departamento de Colombia.
+          </p>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="px-3.5 py-1.5 rounded-xl bg-[#1a2b3f] text-[#E4B25F] text-xs font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Cartagena de Indias
+            </span>
+<span class="px-3.5 py-1.5 rounded-xl bg-[#1a2b3f] text-white text-xs font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">factory</span> Mamonal
+            </span>
+<span class="px-3.5 py-1.5 rounded-xl bg-[#1a2b3f] text-white text-xs font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">apartment</span> Turbaco
+            </span>
+<span class="px-3.5 py-1.5 rounded-xl bg-[#1a2b3f] text-white text-xs font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">location_city</span> Arjona
+            </span>
+<span class="px-3.5 py-1.5 rounded-xl bg-[#1a2b3f] text-white text-xs font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">anchor</span> Pasacaballos
+            </span>
+<span class="px-3.5 py-1.5 rounded-xl bg-[#26364a] text-secondary text-xs font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">language</span> Atención Virtual Nacional
+            </span>
+</div>
+</div>
+<div class="lg:col-span-6">
+<div class="p-3 rounded-2xl bg-[#0f2034] shadow-xl border border-[#1a2b3f]">
+<div class="w-full h-80 rounded-xl bg-cover bg-center overflow-hidden relative" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDgEHZuZW-Xks57spgUMHbVpUR4z2fmzWo2X5lgUqYu7so_jwOD5u9SH-tMAbOD_fliPa5ZsSRh7IlQnNUm9-9-fZyP-3joUXK2-7Lw1gsAvR9Oan-2R4pcMahmp6kpSfgAnw-1EbRSNaRaDuOZm9uALtogGYMUM3HuUTdwmRmEMqCf8A10DY6YA7oxVSkSK31jm3wvWRZ6tSamyA0Bq6wdZpE_pw_HipqLd0DjAZ-ILiRGqd0fWL7gTA');">
+<div class="w-full h-full bg-[#000f21]/40 backdrop-blur-[2px] p-6 flex flex-col justify-end">
+<div class="p-4 rounded-xl bg-[#0f2034]/95 max-w-xs shadow-lg border border-[#1a2b3f]">
+<p class="text-xs text-[#E4B25F] uppercase font-bold">Cobertura Corporativa</p>
+<p class="text-base text-white font-semibold">Cartagena &amp; Corredor Industrial</p>
+<p class="text-xs text-on-surface-variant mt-1">Disponibilidad para visitas directas a tu sede.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN: METODOLOGÍA / ASESORÍA GRATUITA -->
+<section class="w-full bg-[#031427] py-16 lg:py-24" id="metodologia">
+<div class="max-w-[1200px] mx-auto px-4 lg:px-8">
+<div class="max-w-2xl mx-auto text-center space-y-3 mb-14">
+<span class="text-xs text-secondary uppercase tracking-widest font-semibold">Metodología Transparente</span>
+<h2 class="text-2xl sm:text-3xl lg:text-4xl text-white font-bold tracking-tight">
+          ¿Cómo funciona la primera asesoría?
+        </h2>
+<p class="text-base text-on-surface-variant">
+          Un proceso ágil, estructurado y sin compromisos iniciales para identificar la situación de tu negocio.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-8 rounded-2xl bg-[#0b1c30] flex flex-col justify-between space-y-5 border border-[#1a2b3f]/50">
+<div class="flex items-center justify-between">
+<span class="text-4xl text-[#E4B25F]/30 font-bold leading-none">01</span>
+<div class="w-12 h-12 rounded-xl bg-[#1a2b3f] flex items-center justify-center text-[#E4B25F]">
+<span class="material-symbols-outlined text-[24px]">event_available</span>
+</div>
+</div>
+<div class="space-y-2">
+<h3 class="text-xl text-white font-bold">AGENDA</h3>
+<p class="text-sm text-on-surface-variant">
+              Selecciona el día y la hora que mejor te funcione a través del calendario digital oficial en menos de un minuto.
+            </p>
+</div>
+<div class="text-[#E4B25F] text-xs font-semibold">Reserva en Google Calendar</div>
+</div>
+<div class="p-8 rounded-2xl bg-[#0b1c30] flex flex-col justify-between space-y-5 border border-[#1a2b3f]/50">
+<div class="flex items-center justify-between">
+<span class="text-4xl text-[#E4B25F]/30 font-bold leading-none">02</span>
+<div class="w-12 h-12 rounded-xl bg-[#1a2b3f] flex items-center justify-center text-[#E4B25F]">
+<span class="material-symbols-outlined text-[24px]">forum</span>
+</div>
+</div>
+<div class="space-y-2">
+<h3 class="text-xl text-white font-bold">HABLAMOS</h3>
+<p class="text-sm text-on-surface-variant">
+              Conozco la situación actual de tu empresa, evaluamos antecedentes, pendientes DIAN y qué necesitas resolver prioritariamente.
+            </p>
+</div>
+<div class="text-[#E4B25F] text-xs font-semibold">Sesión virtual o presencial</div>
+</div>
+<div class="p-8 rounded-2xl bg-[#0b1c30] flex flex-col justify-between space-y-5 border border-[#1a2b3f]/50">
+<div class="flex items-center justify-between">
+<span class="text-4xl text-[#E4B25F]/30 font-bold leading-none">03</span>
+<div class="w-12 h-12 rounded-xl bg-[#1a2b3f] flex items-center justify-center text-[#E4B25F]">
+<span class="material-symbols-outlined text-[24px]">lightbulb</span>
+</div>
+</div>
+<div class="space-y-2">
+<h3 class="text-xl text-white font-bold">TE ORIENTO</h3>
+<p class="text-sm text-on-surface-variant">
+              Te explico con claridad qué alternativas de servicio responden exactamente a tu caso, con alcance, tiempos y propuesta transparente.
+            </p>
+</div>
+<div class="text-[#E4B25F] text-xs font-semibold">Hoja de ruta sin compromiso</div>
+</div>
+</div>
+<div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+<a class="w-full sm:w-auto inline-flex items-center justify-center h-14 px-8 rounded-xl bg-[#E4B25F] text-[#06182B] text-sm sm:text-base font-bold shadow-lg hover:bg-[#f1be6a] transition-all cursor-pointer" href="https://calendar.app.google/cgFFiYMX15akhNwZ9" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined mr-2 text-[20px]">calendar_month</span>
+<span class="">Agendar mi primera asesoría gratis</span>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center h-14 px-8 rounded-xl bg-[#1a2b3f] text-[#E4B25F] text-sm sm:text-base font-semibold hover:bg-[#0f2034] transition-all cursor-pointer" href="https://wa.me/573135829941" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5 mr-2 shrink-0 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path></svg>
+<span class="">Prefiero hablar por WhatsApp</span>
+</a>
+</div>
+</div>
+</section>
+<!-- SECCIÓN: PREGUNTAS FRECUENTES FAQ -->
+<section class="w-full bg-[#000f21] py-16 lg:py-24" id="preguntas-frecuentes">
+<div class="max-w-[1200px] mx-auto px-4 lg:px-8">
+<div class="max-w-2xl mx-auto text-center space-y-3 mb-14">
+<span class="text-xs text-secondary uppercase tracking-widest font-semibold">Resolución de Dudas</span>
+<h2 class="text-2xl sm:text-3xl lg:text-4xl text-white font-bold tracking-tight">
+          Preguntas frecuentes sobre servicios contables
+        </h2>
+<p class="text-base text-on-surface-variant">
+          Respuestas transparentes a las dudas más habituales de gerentes y directores de empresas.
+        </p>
+</div>
+<div class="max-w-3xl mx-auto space-y-4">
+<!-- FAQ 1 -->
+<div class="rounded-2xl bg-[#0b1c30] overflow-hidden border border-[#1a2b3f]/50">
+<button class="w-full p-6 text-left flex items-center justify-between gap-4 text-base sm:text-lg text-white font-semibold faq-toggle cursor-pointer hover:text-[#E4B25F] transition-colors" type="button">
+<span class="">¿Dónde prestas tus servicios?</span>
+<span class="material-symbols-outlined text-[#E4B25F] text-[24px] transition-transform duration-300 icon-arrow">expand_more</span>
+</button>
+<div class="accordion-content px-6 pb-6 text-on-surface-variant text-sm sm:text-base leading-relaxed">
+            Presto servicios de manera presencial en Cartagena, Turbaco, Arjona, Pasacaballos y Mamonal, asistiendo a sus oficinas o plantas cuando sea necesario. Además, atiendo a clientes de cualquier ciudad del país de manera virtual a través de plataformas de videollamada y gestión documental segura.
+          </div>
+</div>
+<!-- FAQ 2 -->
+<div class="rounded-2xl bg-[#0b1c30] overflow-hidden border border-[#1a2b3f]/50">
+<button class="w-full p-6 text-left flex items-center justify-between gap-4 text-base sm:text-lg text-white font-semibold faq-toggle cursor-pointer hover:text-[#E4B25F] transition-colors" type="button">
+<span class="">¿Cuánto cuesta un servicio contable?</span>
+<span class="material-symbols-outlined text-[#E4B25F] text-[24px] transition-transform duration-300 icon-arrow">expand_more</span>
+</button>
+<div class="accordion-content px-6 pb-6 text-on-surface-variant text-sm sm:text-base leading-relaxed">
+            Los honorarios se determinan según el tipo de servicio requerido, el volumen de transacciones de tu negocio, el número de sedes y el nivel de complejidad tributaria o forense. En la primera asesoría gratuita evaluamos tus necesidades y te entregamos una propuesta clara, sin costos ocultos.
+          </div>
+</div>
+<!-- FAQ 3 -->
+<div class="rounded-2xl bg-[#0b1c30] overflow-hidden border border-[#1a2b3f]/50">
+<button class="w-full p-6 text-left flex items-center justify-between gap-4 text-base sm:text-lg text-white font-semibold faq-toggle cursor-pointer hover:text-[#E4B25F] transition-colors" type="button">
+<span class="">¿Puedo agendar una asesoría antes de contratar?</span>
+<span class="material-symbols-outlined text-[#E4B25F] text-[24px] transition-transform duration-300 icon-arrow">expand_more</span>
+</button>
+<div class="accordion-content px-6 pb-6 text-on-surface-variant text-sm sm:text-base leading-relaxed">
+            Sí, por supuesto. Puedes agendar tu primera sesión completamente gratis. En esa reunión de 20 minutos analizamos la situación actual de tu empresa, respondemos dudas clave y te presentamos la ruta de trabajo recomendada sin ningún compromiso de contratación.
+          </div>
+</div>
+<!-- FAQ 4 -->
+<div class="rounded-2xl bg-[#0b1c30] overflow-hidden border border-[#1a2b3f]/50">
+<button class="w-full p-6 text-left flex items-center justify-between gap-4 text-base sm:text-lg text-white font-semibold faq-toggle cursor-pointer hover:text-[#E4B25F] transition-colors" type="button">
+<span class="">¿Cómo sé si mi empresa necesita revisoría fiscal?</span>
+<span class="material-symbols-outlined text-[#E4B25F] text-[24px] transition-transform duration-300 icon-arrow">expand_more</span>
+</button>
+<div class="accordion-content px-6 pb-6 text-on-surface-variant text-sm sm:text-base leading-relaxed">
+            Depende del tipo de persona jurídica (como las S.A., que la requieren por mandato legal) y de los topes fijados anualmente por la ley (activos brutos equivalentes a 5.000 SMLMV o ingresos brutos a 3.000 SMLMV al 31 de diciembre del año anterior). En nuestra consulta podemos revisar tus balances y confirmarlo con exactitud.
+          </div>
+</div>
+<!-- FAQ 5 -->
+<div class="rounded-2xl bg-[#0b1c30] overflow-hidden border border-[#1a2b3f]/50">
+<button class="w-full p-6 text-left flex items-center justify-between gap-4 text-base sm:text-lg text-white font-semibold faq-toggle cursor-pointer hover:text-[#E4B25F] transition-colors" type="button">
+<span class="">¿Atiendes empresas pequeñas y medianas?</span>
+<span class="material-symbols-outlined text-[#E4B25F] text-[24px] transition-transform duration-300 icon-arrow">expand_more</span>
+</button>
+<div class="accordion-content px-6 pb-6 text-on-surface-variant text-sm sm:text-base leading-relaxed">
+            Sí. Gran parte de mis clientes son pequeñas y medianas empresas (PyMEs) comerciales, de servicios, industriales y de turismo que necesitan profesionalizar su contabilidad, regularizar impuestos y tener certeza financiera para crecer de forma sostenida.
+          </div>
+</div>
+<!-- FAQ 6 -->
+<div class="rounded-2xl bg-[#0b1c30] overflow-hidden border border-[#1a2b3f]/50">
+<button class="w-full p-6 text-left flex items-center justify-between gap-4 text-base sm:text-lg text-white font-semibold faq-toggle cursor-pointer hover:text-[#E4B25F] transition-colors" type="button">
+<span class="">¿La asesoría puede ser virtual?</span>
+<span class="material-symbols-outlined text-[#E4B25F] text-[24px] transition-transform duration-300 icon-arrow">expand_more</span>
+</button>
+<div class="accordion-content px-6 pb-6 text-on-surface-variant text-sm sm:text-base leading-relaxed">
+            Sí. La primera asesoría y las reuniones periódicas de control pueden llevarse a cabo por Google Meet de forma rápida y eficiente, sin importar dónde te encuentres. Si estás en Cartagena o zonas aledañas, también podemos coordinar reuniones presenciales.
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN FINAL CTA -->
+<section class="w-full bg-[#031427] py-16 lg:py-24 relative">
+<div class="max-w-[1200px] mx-auto px-4 lg:px-8 text-center">
+<div class="max-w-2xl mx-auto space-y-5">
+<div class="w-16 h-16 mx-auto rounded-2xl bg-[#1a2b3f] flex items-center justify-center text-[#E4B25F] shadow-lg">
+<span class="material-symbols-outlined text-[36px]">balance</span>
+</div>
+<h2 class="text-3xl sm:text-4xl lg:text-5xl text-white font-bold tracking-tight">
+          Tus números en manos expertas.
+        </h2>
+<p class="text-base text-on-surface-variant max-w-xl mx-auto">
+          Cuéntame qué está pasando con la contabilidad, tributación o información financiera de tu empresa. Demos el primer paso hoy mismo.
+        </p>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 pt-3">
+<a class="inline-flex items-center justify-center h-14 px-8 rounded-xl bg-[#E4B25F] text-[#06182B] text-sm sm:text-base font-bold shadow-xl hover:bg-[#f1be6a] transition-all cursor-pointer" href="https://calendar.app.google/cgFFiYMX15akhNwZ9" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined mr-2 text-[20px]">calendar_month</span>
+<span class="">Agenda tu primera asesoría completamente gratis</span>
+</a>
+<a class="inline-flex items-center justify-center h-14 px-8 rounded-xl bg-[#0f2034] text-[#E4B25F] text-sm sm:text-base font-semibold hover:bg-[#1a2b3f] transition-all cursor-pointer" href="https://wa.me/573135829941" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined mr-2 text-[20px]">chat</span>
+<span class="">Hablar por WhatsApp</span>
+</a>
+</div>
+<div class="pt-6 flex flex-wrap items-center justify-center gap-6 text-on-surface-variant text-xs">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[#E4B25F] text-[18px]">verified</span> 100% Confidencial</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[#E4B25F] text-[18px]">schedule</span> Respuesta en menos de 2 horas</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[#E4B25F] text-[18px]">check</span> Sin compromisos comerciales</span>
+</div>
+</div>
+</div>
+</section>
+<!-- PIE DE PÁGINA FOOTER -->
+<footer class="w-full bg-[#000f21] py-12 border-t border-[#1a2b3f]/50">
+<div class="max-w-[1200px] mx-auto px-4 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+<div class="space-y-3">
+<img alt="Stipk Palacio Díaz — Contador Público" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz9ozfhgXgcLlIsmT0Olqo8UPAVl44ItRqh0LzZtFge0_UH2YWczse1Rk6hAYIK8pyslH4us8gHZ5RPggOM94AMAKpxTO3bdjyLKEwYBZN5_Uoni7IlePRKh__8Ztcux-Dql5nZOrdgramhNoutSRPw6TF_pQ_SJSVj5wgKhqZsuCCVbHueOL1FSUpmVNv3XQ7g9OIfVEmRn5qoHbQXpa2zwW9lwgkCrbqZhSklnyeXOC7ZrxG7mBt4UoCqBZF8Tw-ZSM">
+<p class="text-xs text-on-surface-variant">Servicios corporativos especializados en revisoría fiscal, auditoría forense y consultoría contable tributaria para Cartagena y la Costa Caribe.</p>
+<span class="text-xs text-[#E4B25F] font-semibold tracking-wide uppercase block">Cartagena de Indias, Colombia</span>
+</div>
+<div class="space-y-3">
+<h4 class="text-sm text-white font-semibold">Servicios Especializados</h4>
+<ul class="space-y-2 text-xs text-on-surface-variant">
+<li class=""><a class="hover:text-[#E4B25F] transition-colors" href="#servicios">Revisoría Fiscal Estratégica</a></li>
+<li class=""><a class="hover:text-[#E4B25F] transition-colors" href="#servicios">Auditoría Forense &amp; Prevención</a></li>
+<li class=""><a class="hover:text-[#E4B25F] transition-colors" href="#servicios">Planeación Tributaria Fiscal</a></li>
+<li class=""><a class="hover:text-[#E4B25F] transition-colors" href="#servicios">Consultoría Financiera NIIF</a></li>
+</ul>
+</div>
+<div class="space-y-3">
+<h4 class="text-sm text-white font-semibold">Cobertura Regional</h4>
+<p class="text-xs text-on-surface-variant">Atención presencial ejecutiva y auditorías in-situ en:</p>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2.5 py-1 rounded-lg bg-[#1a2b3f] text-xs text-white">Cartagena</span>
+<span class="px-2.5 py-1 rounded-lg bg-[#1a2b3f] text-xs text-white">Mamonal</span>
+<span class="px-2.5 py-1 rounded-lg bg-[#1a2b3f] text-xs text-white">Turbaco</span>
+<span class="px-2.5 py-1 rounded-lg bg-[#1a2b3f] text-xs text-white">Arjona</span>
+<span class="px-2.5 py-1 rounded-lg bg-[#1a2b3f] text-xs text-white">Pasacaballos</span>
+</div>
+</div>
+<div class="space-y-3">
+<h4 class="text-sm text-white font-semibold">Contacto Directo</h4>
+<ul class="space-y-2.5 text-xs text-on-surface-variant">
+<li class="">
+<a class="flex items-center gap-2 hover:text-[#E4B25F] transition-colors" href="mailto:stipkpalacio@gmail.com">
+<span class="material-symbols-outlined text-[18px] text-[#E4B25F]">mail</span>
+<span class="">stipkpalacio@gmail.com</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center gap-2 hover:text-[#E4B25F] transition-colors" href="https://wa.me/573135829941" rel="noopener noreferrer" target="_blank">
+<svg class="w-4 h-4 text-[#E4B25F] fill-current shrink-0" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path></svg>
+<span class="">+57 313 582 9941</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center gap-2 hover:text-[#E4B25F] transition-colors" href="https://stipkpalacio.com" target="_blank">
+<span class="material-symbols-outlined text-[18px] text-[#E4B25F]">language</span>
+<span class="">stipkpalacio.com</span>
+</a>
+</li>
+<li class="pt-2 flex items-center gap-3"><a aria-label="Síguenos en Instagram" class="w-9 h-9 rounded-xl bg-[#1a2b3f] text-[#E4B25F] flex items-center justify-center hover:bg-[#E4B25F] hover:text-[#06182B] transition-all duration-300 shadow-md" href="https://www.instagram.com/stipkpalacio?stkn=M3Jkd3kzNm1qeDQ2" rel="noopener noreferrer" target="_blank" title="Instagram"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg></a><a aria-label="Síguenos en Facebook" class="w-9 h-9 rounded-xl bg-[#1a2b3f] text-[#E4B25F] flex items-center justify-center hover:bg-[#E4B25F] hover:text-[#06182B] transition-all duration-300 shadow-md" href="https://www.facebook.com/stipkpalaciodiazcontador" rel="noopener noreferrer" target="_blank" title="Facebook"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg></a></li></ul>
+</div>
+</div>
+<div class="pt-6 border-t border-[#1a2b3f]/30 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-on-surface-variant">
+<p class="">© 2026 Stipk Palacio Díaz. Contador Público y Auditor Forense. Todos los derechos reservados.</p>
+<p class="">Cartagena, Bolívar · Colombia</p>
+</div>
+</div>
+</footer>
+</div>
+<!-- MENÚ FIJO MÓVIL -->
+<nav class="mobile-bottom-nav" aria-label="Navegación móvil">
+  <a class="mobile-bottom-whatsapp" href="https://wa.me/573135829941" rel="noopener noreferrer" target="_blank">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path></svg>
+    <span>WhatsApp</span>
+  </a>
+  <div class="mobile-bottom-menu">
+    <a href="#hero-slider"><span class="material-symbols-outlined">home</span><span>Inicio</span></a>
+    <a href="#servicios"><span class="material-symbols-outlined">grid_view</span><span>Servicios</span></a>
+    <a href="#sobre-mi"><span class="material-symbols-outlined">person</span><span>Perfil</span></a>
+    <a href="#contacto"><span class="material-symbols-outlined">call</span><span>Contacto</span></a>
+  </div>
+</nav>
+<!-- SCRIPT DE INTERACTIVIDAD PARA EL PROTOTIPO -->
+<script>
+    (function initInteractiveFeatures() {
+      // 1. Lógica del Carrusel Hero
+      var currentSlide = 0;
+      var totalSlides = 2;
+      var track = document.getElementById('hero-slider-track');
+      var dot1 = document.getElementById('hero-dot-1');
+      var dot2 = document.getElementById('hero-dot-2');
+      var prevBtn = document.getElementById('hero-prev-btn');
+      var nextBtn = document.getElementById('hero-next-btn');
+      var sliderContainer = document.getElementById('hero-slider');
+      var autoSlideInterval = null;
+
+      function updateSlide(index) {
+        currentSlide = index;
+        if (track) {
+          track.style.transform = 'translateX(-' + (currentSlide * 50) + '%)';
+        }
+        if (dot1 && dot2) {
+          if (currentSlide === 0) {
+            dot1.className = 'w-8 h-2 rounded-full bg-[#E4B25F] transition-all duration-300 cursor-pointer';
+            dot2.className = 'w-3 h-2 rounded-full bg-[#26364a] hover:bg-[#2a3a4f] transition-all duration-300 cursor-pointer';
+          } else {
+            dot1.className = 'w-3 h-2 rounded-full bg-[#26364a] hover:bg-[#2a3a4f] transition-all duration-300 cursor-pointer';
+            dot2.className = 'w-8 h-2 rounded-full bg-[#E4B25F] transition-all duration-300 cursor-pointer';
+          }
+        }
+      }
+
+      function nextSlide() {
+        var next = (currentSlide + 1) % totalSlides;
+        updateSlide(next);
+      }
+
+      function prevSlide() {
+        var prev = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlide(prev);
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          nextSlide();
+          resetTimer();
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          prevSlide();
+          resetTimer();
+        });
+      }
+
+      if (dot1) {
+        dot1.addEventListener('click', function(e) {
+          e.preventDefault();
+          updateSlide(0);
+          resetTimer();
+        });
+      }
+
+      if (dot2) {
+        dot2.addEventListener('click', function(e) {
+          e.preventDefault();
+          updateSlide(1);
+          resetTimer();
+        });
+      }
+
+      function startTimer() {
+        if (!autoSlideInterval) {
+          autoSlideInterval = setInterval(nextSlide, 5000);
+        }
+      }
+
+      function resetTimer() {
+        if (autoSlideInterval) {
+          clearInterval(autoSlideInterval);
+          autoSlideInterval = null;
+        }
+        startTimer();
+      }
+
+      if (sliderContainer) {
+        sliderContainer.addEventListener('mouseenter', function() {
+          if (autoSlideInterval) {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = null;
+          }
+        });
+        sliderContainer.addEventListener('mouseleave', function() {
+          startTimer();
+        });
+      }
+
+      startTimer();
+
+      // 2. Lógica del Carrusel de Servicios (4 Slides)
+      var currentServiceIndex = 0;
+      var totalServices = 4;
+      var servicesTrack = document.getElementById('services-track');
+      var servicePrevBtn = document.getElementById('services-prev-btn');
+      var serviceNextBtn = document.getElementById('services-next-btn');
+      var serviceDots = document.querySelectorAll('[data-service-dot]');
+
+      function getStepPercentage() {
+        // En md y superiores se ven 2 tarjetas a la vez (50% cada una)
+        return window.innerWidth >= 768 ? 50 : 100;
+      }
+
+      function getMaxServiceIndex() {
+        return window.innerWidth >= 768 ? (totalServices - 2) : (totalServices - 1);
+      }
+
+      function updateServicesSlide(index) {
+        var maxIndex = getMaxServiceIndex();
+        if (index > maxIndex) index = 0;
+        if (index < 0) index = maxIndex;
+        currentServiceIndex = index;
+
+        var step = getStepPercentage();
+        if (servicesTrack) {
+          servicesTrack.style.transform = 'translateX(-' + (currentServiceIndex * step) + '%)';
+        }
+
+        serviceDots.forEach(function(dot, i) {
+          if (i === currentServiceIndex) {
+            dot.className = 'w-8 h-2 rounded-full bg-[#E4B25F] transition-all duration-300 cursor-pointer';
+          } else {
+            dot.className = 'w-3 h-2 rounded-full bg-[#26364a] hover:bg-[#2a3a4f] transition-all duration-300 cursor-pointer';
+          }
+        });
+      }
+
+      if (serviceNextBtn) {
+        serviceNextBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          updateServicesSlide(currentServiceIndex + 1);
+        });
+      }
+
+      if (servicePrevBtn) {
+        servicePrevBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          updateServicesSlide(currentServiceIndex - 1);
+        });
+      }
+
+      serviceDots.forEach(function(dot) {
+        dot.addEventListener('click', function(e) {
+          e.preventDefault();
+          var idx = parseInt(this.getAttribute('data-service-dot'), 10);
+          updateServicesSlide(idx);
+        });
+      });
+
+      window.addEventListener('resize', function() {
+        updateServicesSlide(currentServiceIndex);
+      });
+
+      // 3. Animación de entrada sin interrupción del diseño
+      var revealItems = document.querySelectorAll('header, section, footer, div, li, ul, a, img, span, p, h1, h2, h3, h4, blockquote, button');
+      revealItems.forEach(function(el, index) {
+        var keepIgnored = el.classList.contains('floating-conversion-actions') || el.closest('.floating-conversion-actions');
+        var isMobileNav = el.closest('.mobile-bottom-nav') || el.closest('.mobile-bottom-menu') || el.closest('.mobile-bottom-whatsapp');
+        if (keepIgnored || isMobileNav || el.tagName === 'SCRIPT') return;
+        el.classList.add('reveal');
+        el.style.setProperty('--reveal-delay', (index % 14) * 60 + 'ms');
+      });
+
+      if ('IntersectionObserver' in window) {
+        var revealObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.12,
+          rootMargin: '0px 0px -5% 0px'
+        });
+
+        document.querySelectorAll('.reveal').forEach(function(el) {
+          revealObserver.observe(el);
+        });
+      } else {
+        document.querySelectorAll('.reveal').forEach(function(el) {
+          el.classList.add('is-visible');
+        });
+      }
+
+      // 4. Acordeón Interactivo de FAQ
+      var faqButtons = document.querySelectorAll('.faq-toggle');
+      faqButtons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var content = this.nextElementSibling;
+          var icon = this.querySelector('.icon-arrow');
+          var isOpen = content.classList.contains('open');
+
+          // Cerrar otros acordeones
+          document.querySelectorAll('.accordion-content').forEach(function(c) {
+            c.classList.remove('open');
+          });
+          document.querySelectorAll('.icon-arrow').forEach(function(i) {
+            i.style.transform = 'rotate(0deg)';
+          });
+
+          // Alternar el actual
+          if (!isOpen && content) {
+            content.classList.add('open');
+            if (icon) icon.style.transform = 'rotate(180deg)';
+          }
+        });
+      });
+
+    })();
+  </script>
+</body></html>

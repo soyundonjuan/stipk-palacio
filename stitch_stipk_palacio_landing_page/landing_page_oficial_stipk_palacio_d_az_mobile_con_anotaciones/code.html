@@ -1,0 +1,578 @@
+<!DOCTYPE html><html class="dark" lang="es" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#031427;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary-fixed": "#ffdead", "inverse-on-surface": "#213145", "primary-container": "#e4b25f", "background": "#031427", "on-secondary-container": "#f2c26f", "surface-variant": "#26364a", "surface-dim": "#031427", "on-secondary-fixed-variant": "#5e4100", "outline": "#9b8f7e", "tertiary": "#c6d8f3", "secondary-fixed": "#ffdea9", "on-secondary-fixed": "#271900", "inverse-surface": "#d3e4fe", "error": "#ffb4ab", "on-tertiary-fixed-variant": "#37485e", "surface-container-high": "#1a2b3f", "primary-fixed-dim": "#f1be6a", "on-error-container": "#ffdad6", "surface-container": "#0f2034", "surface-container-highest": "#26364a", "tertiary-container": "#aabcd6", "on-primary-fixed": "#281900", "surface-tint": "#f1be6a", "surface-bright": "#2a3a4f", "tertiary-fixed-dim": "#b6c8e3", "outline-variant": "#4f4538", "on-primary": "#432c00", "inverse-primary": "#7d5708", "secondary-fixed-dim": "#eebf6c", "on-tertiary-fixed": "#0a1c30", "on-error": "#690005", "on-background": "#d3e4fe", "surface": "#031427", "on-tertiary": "#203146", "secondary": "#eebf6c", "on-primary-fixed-variant": "#604100", "on-surface": "#d3e4fe", "tertiary-fixed": "#d2e4ff", "surface-container-lowest": "#000f21", "primary": "#ffce80", "on-tertiary-container": "#3b4c62", "error-container": "#93000a", "on-primary-container": "#644400", "surface-container-low": "#0b1c30", "on-secondary": "#422c00", "secondary-container": "#704f00", "on-surface-variant": "#d3c4b2" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1.5rem", "margin-mobile": "1.25rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "space-xl": "2.5rem", "margin": "2.5rem", "gutter-mobile": "1rem", "space-md": "1rem" }, "fontFamily": { "label-sm": ["Montserrat"], "headline-md-mobile": ["Montserrat"], "headline-lg-mobile": ["Montserrat"], "label-md": ["Montserrat"], "body-md": ["Montserrat"], "body-lg": ["Montserrat"], "label-lg": ["Montserrat"], "display-lg-mobile": ["Montserrat"], "headline-sm": ["Montserrat"], "headline-md": ["Montserrat"], "display-lg": ["Montserrat"], "headline-lg": ["Montserrat"] }, "fontSize": { "label-sm": ["12px", { "lineHeight": "1.3", "letterSpacing": "0.03", "fontWeight": "500" }], "headline-md-mobile": ["24px", { "lineHeight": "1.25", "letterSpacing": "0", "fontWeight": "600" }], "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01", "fontWeight": "700" }], "label-md": ["14px", { "lineHeight": "1.3", "letterSpacing": "0.01", "fontWeight": "500" }], "body-md": ["16px", { "lineHeight": "1.55", "letterSpacing": "0", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }], "label-lg": ["15px", { "lineHeight": "1.2", "letterSpacing": "0.02", "fontWeight": "600" }], "display-lg-mobile": ["38px", { "lineHeight": "1.15", "letterSpacing": "-0.015", "fontWeight": "700" }], "headline-sm": ["22px", { "lineHeight": "1.3", "letterSpacing": "0", "fontWeight": "600" }], "headline-md": ["30px", { "lineHeight": "1.2", "letterSpacing": "-0.005", "fontWeight": "600" }], "display-lg": ["60px", { "lineHeight": "1.1", "letterSpacing": "-0.02", "fontWeight": "700" }], "headline-lg": ["44px", { "lineHeight": "1.15", "letterSpacing": "-0.01", "fontWeight": "700" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl pt-safe shadow-[0_4px_20px_rgba(0,0,0,0.25)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="logo-stipk-dorado-V1.png" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1UxdCv1X-hG9M_IZLWM7I-RSD7qt3r84AoPAX7Krei-t5r_AZHHNu8lU1AYZYK7lUEHAPzNLmo1iKtXJG2h7stjd5bfnDb3c3dp74rd6HF3kWWD8R-KSLfiRpImXZNCsihmyGmeZJojZ6cwPa7jVT5RCnUhUNC-1kryEcM7aF34jF1oWdCwQwwAz1ZJ5nUnCGXQcGJ10wfPdT80ZccgWY_QyemTEvMV9qbQ75xT4mk7i4F7poArDSqmtpRBOWYkuCQsYsDTvHhBy8Y"><div class="flex flex-col truncate"></div></div><div class="flex items-center gap-space-sm flex-shrink-0"><a class="h-11 px-space-md rounded-xl bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center transition-colors min-w-[44px]" data-path="agendar-asesoria" href="#agendar">Agendar</a></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full text-on-surface">
+<!-- 1. HERO SECTION (Banner móvil de alta conversión) -->
+<section class="flex flex-col px-margin-mobile pt-space-md pb-space-xl gap-space-lg">
+<!-- Trust Pill Badge -->
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-high w-fit">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm text-primary tracking-wider uppercase font-semibold">10 Años de Experiencia Profesional</span>
+</div>
+<!-- Main Headline & Subtitle -->
+<div class="flex flex-col gap-space-sm">
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-on-surface tracking-tight">
+        ¿Hablamos de los <span class="text-primary font-bold">números</span> de tu empresa?
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        Agenda tu primera asesoría completamente gratis y cuéntame qué necesitas resolver. Analicemos juntos tu contabilidad o tus requerimientos tributarios.
+      </p>
+</div>
+<!-- Professional Portrait Card -->
+<div class="relative w-full rounded-xl overflow-hidden bg-surface-container-low shadow-xl" style="aspect-ratio: 3/4;">
+<img class="w-full h-full object-cover object-top" data-alt="Retrato profesional de medio cuerpo de Stipk Palacio Díaz, contador público y revisor fiscal en elegante traje azul marino a medida con corbata sobria y prendedor sutil dorado, sonriendo con confianza y autoridad ejecutiva en una moderna oficina con ventanal luminoso y libros contables de fondo en Cartagena, Colombia." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMwo9LZps3JuOc_nnMHG0HrMDcly2q6Hp-t92X4RBKsaczAFIqmP9pTWBwmrgKmT3-LpCLfd1RBDpehw_v0fb7-DwzJIWnXliMndjnzoq1b224xr55JoN9TkXxBByzE-VwfDJCCj2VS0edYjsLvXpOTkMWNvuue8399ygFU-07Zq5CtSY7L-X1feFqvnWy9u3kXDfJoC65zFwdvXRccvfAb4DVLq_JcDpRbzu7Qx85-l_PQVfHeLJih4wq1gwtiybhgF5myS4hkddh1BI">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent"></div>
+<!-- Overlay Badge Profile -->
+<div class="absolute bottom-space-md left-space-md right-space-md bg-surface-container/90 backdrop-blur-md p-space-md rounded-xl shadow-lg flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined text-[24px]">balance</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Stipk Palacio Díaz</span>
+<span class="font-label-sm text-label-sm text-primary truncate">Revisor Fiscal &amp; Auditor Forense · Cartagena, COL</span>
+</div>
+</div>
+</div>
+<!-- High-impact CTAs -->
+<div class="flex flex-col gap-space-sm w-full pt-space-xs">
+<a class="w-full h-12 px-space-lg rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-space-xs shadow-md active:scale-[0.98] transition-transform" href="https://calendar.app.google/cgFFiYMX15akhNwZ9" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+<span class="">Agendar asesoría gratuita</span>
+</a>
+<a class="w-full h-12 px-space-lg rounded-xl bg-surface-container-high hover:bg-surface-bright text-primary font-label-lg text-label-lg flex items-center justify-center gap-space-xs active:scale-[0.98] transition-transform" href="https://wa.me/573135829941" rel="noopener" target="_blank"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.19 8.19 0 0 1-5.82 2.41h-.01c-1.47 0-2.91-.39-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.204 8.204 0 0 1-1.26-4.4c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.07-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.17 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"></path></svg><span class="">Hablar por WhatsApp</span></a>
+</div>
+<!-- Trust seals list -->
+<div class="flex flex-wrap items-center justify-center gap-x-space-md gap-y-space-xs pt-space-xs text-on-surface-variant font-label-sm text-label-sm text-center">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[16px]">lock</span> 100% confidencial
+      </span>
+<span class="">•</span>
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[16px]">money_off</span> Sin costo comercial
+      </span>
+<span class="">•</span>
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[16px]">fact_check</span> Diagnóstico inicial claro
+      </span>
+</div>
+</section>
+<!-- 2. SECCIÓN AUTODIAGNÓSTICO INMEDIATO -->
+<section class="flex flex-col px-margin-mobile py-space-xl bg-surface-container-lowest gap-space-lg">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-semibold">AUTODIAGNÓSTICO INMEDIATO</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold">¿Qué necesitas resolver?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Selecciona tu situación actual para ver la ruta de solución directa recomendada.</p>
+</div>
+<!-- 6 Interactive/Informative Action Cards -->
+<div class="flex flex-col gap-space-md">
+<!-- Card 1 -->
+<a class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-space-sm" href="https://calendar.app.google/cgFFiYMX15akhNwZ9" rel="noopener" target="_blank">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">receipt_long</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">arrow_forward</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Necesito organizar mi contabilidad</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+<span class="text-primary font-medium">Solución:</span> Outsourcing Contable continuo con reportes mensuales claros y balance al día.
+          </p>
+</div>
+</a>
+<!-- Card 2 -->
+<a class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-space-sm" href="https://calendar.app.google/cgFFiYMX15akhNwZ9" rel="noopener" target="_blank">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">calendar_clock</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">arrow_forward</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Tengo obligaciones tributarias pendientes</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+<span class="text-primary font-medium">Solución:</span> Tributación estratégica, saneamiento fiscal y presentación oportuna DIAN sin multas.
+          </p>
+</div>
+</a>
+<!-- Card 3 -->
+<a class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-space-sm" href="https://calendar.app.google/cgFFiYMX15akhNwZ9" rel="noopener" target="_blank">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">balance</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">arrow_forward</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Necesito saber si debo tener revisor fiscal</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+<span class="text-primary font-medium">Solución:</span> Revisoría Fiscal institucional y evaluación precisa de topes de ingresos o activos legales.
+          </p>
+</div>
+</a>
+<!-- Card 4 -->
+<a class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-space-sm" href="https://calendar.app.google/cgFFiYMX15akhNwZ9" rel="noopener" target="_blank">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">troubleshoot</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">arrow_forward</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Necesito revisar información financiera</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+<span class="text-primary font-medium">Solución:</span> Auditoría forense y peritaje contable con informe técnico y probatorio detallado.
+          </p>
+</div>
+</a>
+<!-- Card 5 -->
+<a class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-space-sm" href="https://calendar.app.google/cgFFiYMX15akhNwZ9" rel="noopener" target="_blank">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">domain</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">arrow_forward</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Estoy creando una empresa</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+<span class="text-primary font-medium">Solución:</span> Constitución de Empresas SAS, diseño estatutario, registro mercantil y formalización integral.
+          </p>
+</div>
+</a>
+<!-- Card 6 (Destacada en Dorado/Oro) -->
+<a class="p-space-lg rounded-xl bg-primary text-on-primary shadow-xl flex flex-col gap-space-sm active:scale-[0.99] transition-transform" href="https://calendar.app.google/cgFFiYMX15akhNwZ9" rel="noopener" target="_blank">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-lg bg-on-primary/10 flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[22px]">contact_support</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-bold">No sé exactamente qué necesito</span>
+<p class="font-body-md text-body-md text-on-primary/90 mt-1">
+            Te orientamos en una sesión de 20 minutos sin costo para clasificar la situación de tu negocio.
+          </p>
+</div>
+<div class="flex items-center gap-space-xs font-label-lg text-label-lg font-bold pt-space-xs">
+<span class="">Quiero orientación</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</div>
+</a>
+</div>
+<!-- Diagnostic Banner Close -->
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-space-sm items-center text-center">
+<span class="font-headline-sm text-headline-sm text-on-surface">Tus números deben darte claridad, no más preguntas.</span>
+<a class="w-full h-11 rounded-lg bg-surface-container-high hover:bg-surface-bright text-primary font-label-lg text-label-lg flex items-center justify-center gap-space-xs transition-colors" href="https://wa.me/573135829941" rel="noopener" target="_blank"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.19 8.19 0 0 1-5.82 2.41h-.01c-1.47 0-2.91-.39-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.204 8.204 0 0 1-1.26-4.4c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.07-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.17 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"></path></svg><span class="">Hablar con Stipk</span></a>
+</div>
+</section>
+<!-- 3. PROPUESTA DE VALOR (3 Pilares) -->
+<section class="flex flex-col px-margin-mobile py-space-xl gap-space-lg">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-semibold">METODOLOGÍA DIRECTA</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold">Respaldo profesional para entender y gestionar tus números</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Acompaño a empresas en sus procesos contables, tributarios y de control con criterio técnico cercano y adaptado a Cartagena y la Costa Caribe.</p>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Pilar 1 -->
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-bold tracking-widest">PILAR 01</span>
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Claridad</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Información financiera ordenada y reportes comprensibles para que tomes decisiones estratégicas con cifras reales y actualizadas al instante.
+        </p>
+</div>
+<!-- Pilar 2 -->
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-bold tracking-widest">PILAR 02</span>
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">security</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Control</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Seguimiento riguroso de procesos, cronogramas de vencimientos tributarios y mitigación preventiva de riesgos ante entidades fiscalizadoras.
+        </p>
+</div>
+<!-- Pilar 3 -->
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-bold tracking-widest">PILAR 03</span>
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">handshake</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Respaldo</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Acompañamiento profesional permanente, comunicación sin tecnicismos innecesarios y respuesta ágil ante requerimientos corporativos inmediatos.
+        </p>
+</div>
+</div>
+</section>
+<!-- 4. PORTAFOLIO DE SERVICIOS -->
+<section class="flex flex-col px-margin-mobile py-space-xl bg-surface-container-lowest gap-space-lg">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-semibold">PORTAFOLIO ESPECIALIZADO</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold">Servicios contables y tributarios para empresas en Cartagena</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Soluciones diseñadas a la medida de personas jurídicas y naturales con actividad comercial activa.</p>
+</div>
+<div class="flex flex-col gap-space-lg">
+<!-- Servicio 1: Contabilidad Integral -->
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">analytics</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Contabilidad Integral</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Outsourcing contable integral para PyMEs y negocios en crecimiento.</p>
+</div>
+<div class="flex flex-col gap-space-xs font-label-md text-label-md text-on-surface-variant">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span class="">Registro sistemático bajo normas NIIF / IFRS</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span class="">Conciliaciones bancarias y de cartera mensuales</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span class="">Emisión de Estados Financieros certificados</span>
+</div>
+</div>
+<a class="h-11 rounded-lg bg-surface-container-high hover:bg-surface-bright text-primary font-label-lg text-label-lg flex items-center justify-center gap-space-xs mt-space-xs transition-colors" href="https://calendar.app.google/cgFFiYMX15akhNwZ9" rel="noopener" target="_blank">
+<span class="">Quiero conocer este servicio</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Servicio 2: Gestión Tributaria -->
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">payments</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Gestión Tributaria</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Cumplimiento fiscal inteligente y blindaje ante requerimientos DIAN.</p>
+</div>
+<div class="flex flex-col gap-space-xs font-label-md text-label-md text-on-surface-variant">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span class="">Planificación y liquidación IVA, Renta y Retención</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span class="">Información Exógena / Medios Magnéticos nacionales y distritales</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span class="">Implementación de Facturación y Nómina Electrónica</span>
+</div>
+</div>
+<a class="h-11 rounded-lg bg-surface-container-high hover:bg-surface-bright text-primary font-label-lg text-label-lg flex items-center justify-center gap-space-xs mt-space-xs transition-colors" href="https://calendar.app.google/cgFFiYMX15akhNwZ9" rel="noopener" target="_blank">
+<span class="">Quiero conocer este servicio</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Servicio 3: Revisoría Fiscal y Auditoría -->
+<div class="p-space-lg rounded-xl bg-surface-container-high flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">gavel</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold bg-primary/20 text-primary px-space-sm py-1 rounded-full">Alta Especialidad</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Revisoría Fiscal y Auditoría</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Supervisión independiente, rigor legal e integridad en las operaciones.</p>
+</div>
+<div class="flex flex-col gap-space-xs font-label-md text-label-md text-on-surface-variant">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span class="">Dictámenes técnicos para Asambleas y Juntas Directivas</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span class="">Evaluación continua del sistema de Control Interno</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span class="">Peritaje contable judicial y auditoría forense preventiva</span>
+</div>
+</div>
+<a class="h-11 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-space-xs mt-space-xs transition-colors font-semibold" href="https://calendar.app.google/cgFFiYMX15akhNwZ9" rel="noopener" target="_blank">
+<span class="">Quiero conocer este servicio</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Servicio 4: Constitución de Empresas -->
+<div class="p-space-lg rounded-xl bg-surface-container-low flex flex-col gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">storefront</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Constitución de Empresas</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Formalización ágil y estructuración estatutaria sin trabas burocráticas.</p>
+</div>
+<div class="flex flex-col gap-space-xs font-label-md text-label-md text-on-surface-variant">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span class="">Redacción estatutaria especializada SAS</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span class="">Registro Cámara de Comercio y obtención RUT DIAN</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span class="">Habilitación bancaria y firmas electrónicas</span>
+</div>
+</div>
+<a class="h-11 rounded-lg bg-surface-container-high hover:bg-surface-bright text-primary font-label-lg text-label-lg flex items-center justify-center gap-space-xs mt-space-xs transition-colors" href="https://calendar.app.google/cgFFiYMX15akhNwZ9" rel="noopener" target="_blank">
+<span class="">Quiero conocer este servicio</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- 5. TRAYECTORIA Y PERFIL PROFESIONAL -->
+<section class="flex flex-col px-margin-mobile py-space-xl gap-space-lg">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-semibold">EXPERIENCIA COMPROBADA</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold">Contador público con experiencia en Cartagena</h2>
+</div>
+<!-- Mini Profile card with photo -->
+<div class="flex flex-col gap-space-md p-space-md rounded-xl bg-surface-container-low">
+<div class="w-full h-64 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover object-center" data-alt="Fotografía cercana de Stipk Palacio Díaz en camisa ejecutiva blanca y corbata elegante, revisando reportes tributarios con una pluma estilográfica en un ambiente sobrio y moderno con tonos azul oscuro y acentos dorados." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwjosgqI6gdosPnXalmVVo-VBl2OGwXnTxQIo5Ng2U853C5e5vtZsqdfXsfEhhO_JYWSATkptEsWkjLHhahWCf2CbBKwPqOm7sYEa7iUO6vWodlmemWaFtKuZU5hwRp9f7vPkSbYUEUv3UhyxMLVr5wvA_RiEqGQfaNZty6lXa5RTPeWqFZBDJS255JxYPa1IUDuwNgSdH9g5a5tjXtb6iIz-QeEVcWT-3nP_shz8BxnX60D1P9LUnj1bb38yVnsm1NXj-_h7HeRN25lw">
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        Soy <strong class="text-on-surface">Stipk Palacio Díaz</strong>, contador con más de 10 años de experiencia profesional protegiendo el patrimonio de empresas e inversionistas en la Costa Caribe. Mi enfoque combina la precisión de la auditoría forense con una atención directa, sin rodeos ni complejidades innecesarias.
+      </p>
+</div>
+<!-- 4 Métricas de autoridad en grid 2x2 -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-1 text-center justify-center">
+<span class="font-headline-lg text-headline-lg-mobile text-primary font-bold">+10</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Años de experiencia profesional</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-1 text-center justify-center">
+<span class="material-symbols-outlined text-primary text-[28px] mx-auto">school</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">Revisoría Fiscal</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Especialización de postgrado</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-1 text-center justify-center">
+<span class="material-symbols-outlined text-primary text-[28px] mx-auto">search_insights</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">Auditoría Forense</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Detección de fraudes y litigios</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-1 text-center justify-center">
+<span class="font-headline-lg text-headline-lg-mobile text-primary font-bold">+100</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">PyMEs y líderes asesorados</span>
+</div>
+</div>
+<a class="w-full h-12 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-space-xs font-semibold shadow-md" href="https://calendar.app.google/cgFFiYMX15akhNwZ9" rel="noopener" target="_blank">
+<span class="">Conocer cómo puedo ayudarte</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+</section>
+<!-- 6. COBERTURA GEOGRÁFICA -->
+<section class="flex flex-col px-margin-mobile py-space-xl bg-surface-container-lowest gap-space-lg">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-semibold">PRESENCIA REGIONAL</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold">Servicios contables en Cartagena y alrededores</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Atención en modalidad 100% remota o con visitas presenciales a tu sede u oficina.</p>
+</div>
+<!-- Map representation card -->
+<div class="flex flex-col rounded-xl overflow-hidden bg-surface-container-low shadow-lg">
+<div class="w-full h-48 bg-cover bg-center" data-location="Cartagena de Indias, Bolivar, Colombia" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDBCt8uJW4Gh3-7JC4Lfr7dcRxFFmsjEaZ334BkLjDMcklm-x--R-T1um-pFM9ObAR0q5Ukt42h-wD7jfpLYlTfbJDI2Ua-cRMM5pgbtOuusr7nTFVwwDwg6Lh7PF6ybeXvr5NRWoXmlT3d2ge_djBf70A7zaLSh-k1kWOrByakm7hTNGgxFr1Ywy5KvPlPhVOVS9WWaZ1NTi-1y3by_t7fGfW7w5Kqi434BgtxwJeMPP_l6krRFRe8Sw')"></div>
+<div class="p-space-md flex flex-col gap-space-sm">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">pin_drop</span>
+          Sectores con atención prioritaria:
+        </span>
+<!-- Badges / Chips -->
+<div class="flex flex-wrap gap-2">
+<span class="px-space-sm py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">Bocagrande &amp; Castillogrande</span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">Centro Histórico &amp; Manga</span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">Zona Industrial Mamonal</span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">Turbaco &amp; Arjona</span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">Pasacaballos</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. METODOLOGÍA PASO A PASO -->
+<section class="flex flex-col px-margin-mobile py-space-xl gap-space-lg">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-semibold">SIN COMPLICACIONES</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold">¿Cómo funciona la primera asesoría?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Un proceso simple, estructurado y sin costo para comenzar con total tranquilidad.</p>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Paso 1 -->
+<div class="flex gap-space-md items-start p-space-md rounded-xl bg-surface-container-low">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-label-lg flex-shrink-0">
+          01
+        </div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Agendas</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+            Eliges el día y la hora que mejor te convenga en el calendario digital en menos de 1 minuto.
+          </p>
+</div>
+</div>
+<!-- Paso 2 -->
+<div class="flex gap-space-md items-start p-space-md rounded-xl bg-surface-container-low">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-label-lg flex-shrink-0">
+          02
+        </div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Hablamos</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+            Nos conectamos en una sesión de 20-30 min vía Google Meet, llamada telefónica o visita presencial.
+          </p>
+</div>
+</div>
+<!-- Paso 3 -->
+<div class="flex gap-space-md items-start p-space-md rounded-xl bg-surface-container-low">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-label-lg flex-shrink-0">
+          03
+        </div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Te oriento</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+            Sales de la llamada sabiendo con exactitud el estado contable de tu negocio y la ruta directa a seguir.
+          </p>
+</div>
+</div>
+</div>
+<!-- Metodología Conversion CTAs -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<a class="w-full h-12 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-space-xs font-semibold shadow-md" href="https://calendar.app.google/cgFFiYMX15akhNwZ9" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+<span class="">Agendar mi primera asesoría gratis</span>
+</a>
+<a class="w-full h-12 rounded-xl bg-surface-container-high hover:bg-surface-bright text-primary font-label-lg text-label-lg flex items-center justify-center gap-space-xs" href="https://wa.me/573135829941" rel="noopener" target="_blank"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.19 8.19 0 0 1-5.82 2.41h-.01c-1.47 0-2.91-.39-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.204 8.204 0 0 1-1.26-4.4c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.07-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.17 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"></path></svg><span class="">Prefiero hablar por WhatsApp</span></a>
+</div>
+</section>
+<!-- 8. PREGUNTAS FRECUENTES (FAQ interactivo) -->
+<section class="flex flex-col px-margin-mobile py-space-xl bg-surface-container-lowest gap-space-lg">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-semibold">RESOLVEMOS TUS DUDAS</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold">Preguntas Frecuentes</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Respuestas directas a las consultas más habituales de nuestros clientes.</p>
+</div>
+<!-- FAQ Acordeones interactivos en Vanilla JS -->
+<div class="flex flex-col gap-space-sm" id="faq-accordion">
+<!-- Item 1 -->
+<div class="faq-item rounded-xl bg-surface-container-low overflow-hidden transition-all">
+<button class="faq-toggle w-full p-space-md text-left flex items-center justify-between gap-space-sm min-h-[52px]" type="button">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">¿Dónde prestas tus servicios?</span>
+<span class="material-symbols-outlined text-primary faq-icon transition-transform">expand_more</span>
+</button>
+<div class="faq-content px-space-md pb-space-md hidden text-on-surface-variant font-body-md text-body-md">
+          Tengo base en Cartagena de Indias, prestando atención presencial a toda la zona metropolitana y Mamonal. Adicionalmente, brindamos soporte 100% digital y en tiempo real a empresas en toda Colombia mediante herramientas en la nube.
+        </div>
+</div>
+<!-- Item 2 -->
+<div class="faq-item rounded-xl bg-surface-container-low overflow-hidden transition-all">
+<button class="faq-toggle w-full p-space-md text-left flex items-center justify-between gap-space-sm min-h-[52px]" type="button">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">¿Cuánto cuesta un servicio contable mensual?</span>
+<span class="material-symbols-outlined text-primary faq-icon transition-transform">expand_more</span>
+</button>
+<div class="faq-content px-space-md pb-space-md hidden text-on-surface-variant font-body-md text-body-md">
+          La tarifa depende del volumen transaccional, número de empleados y complejidad tributaria de la empresa. En la primera asesoría gratuita evaluamos tu caso y te entregamos una propuesta personalizada sin sorpresas ni sobrecostos.
+        </div>
+</div>
+<!-- Item 3 -->
+<div class="faq-item rounded-xl bg-surface-container-low overflow-hidden transition-all">
+<button class="faq-toggle w-full p-space-md text-left flex items-center justify-between gap-space-sm min-h-[52px]" type="button">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">¿Puedo agendar una asesoría antes de contratar?</span>
+<span class="material-symbols-outlined text-primary faq-icon transition-transform">expand_more</span>
+</button>
+<div class="faq-content px-space-md pb-space-md hidden text-on-surface-variant font-body-md text-body-md">
+          Sí, absolutamente. La sesión inicial de 20 minutos es 100% gratuita y sin ningún compromiso de contratación. Su objetivo es brindarte orientación y claridad sobre el estado de tu negocio.
+        </div>
+</div>
+<!-- Item 4 -->
+<div class="faq-item rounded-xl bg-surface-container-low overflow-hidden transition-all">
+<button class="faq-toggle w-full p-space-md text-left flex items-center justify-between gap-space-sm min-h-[52px]" type="button">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">¿Cómo sé si mi empresa necesita revisoría fiscal?</span>
+<span class="material-symbols-outlined text-primary faq-icon transition-transform">expand_more</span>
+</button>
+<div class="faq-content px-space-md pb-space-md hidden text-on-surface-variant font-body-md text-body-md">
+          En Colombia, las SAS y sociedades comerciales deben tener Revisor Fiscal si al cierre del año anterior sus activos brutos superan los 5.000 SMMLV o sus ingresos brutos superan los 3.000 SMMLV, o por disposición de estatutos. Lo evaluamos en minutos.
+        </div>
+</div>
+<!-- Item 5 -->
+<div class="faq-item rounded-xl bg-surface-container-low overflow-hidden transition-all">
+<button class="faq-toggle w-full p-space-md text-left flex items-center justify-between gap-space-sm min-h-[52px]" type="button">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">¿Atiendes empresas pequeñas y medianas?</span>
+<span class="material-symbols-outlined text-primary faq-icon transition-transform">expand_more</span>
+</button>
+<div class="faq-content px-space-md pb-space-md hidden text-on-surface-variant font-body-md text-body-md">
+          Sí. El 80% de nuestros clientes son PyMEs, emprendimientos en fase de formalización e independientes que buscan orden contable riguroso y optimización de sus impuestos.
+        </div>
+</div>
+<!-- Item 6 -->
+<div class="faq-item rounded-xl bg-surface-container-low overflow-hidden transition-all">
+<button class="faq-toggle w-full p-space-md text-left flex items-center justify-between gap-space-sm min-h-[52px]" type="button">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">¿La asesoría puede ser 100% virtual?</span>
+<span class="material-symbols-outlined text-primary faq-icon transition-transform">expand_more</span>
+</button>
+<div class="faq-content px-space-md pb-space-md hidden text-on-surface-variant font-body-md text-body-md">
+          Por supuesto. Trabajamos habitualmente por Google Meet, Zoom o llamada telefónica con soporte de documentos compartidos de manera segura y confidencial.
+        </div>
+</div>
+</div>
+</section>
+<!-- 9. BANNER FINAL DE CIERRE Y CONVERSIÓN -->
+<section class="flex flex-col px-margin-mobile py-space-xl gap-space-lg text-center items-center">
+<div class="w-16 h-16 rounded-full bg-primary/20 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[36px]">verified_user</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold">Tus números en manos expertas.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm mx-auto">
+        Comienza hoy a tener tranquilidad contable y fiscal. Demos el primer paso juntos.
+      </p>
+</div>
+<div class="flex flex-col gap-space-sm w-full">
+<a class="w-full h-12 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-space-xs font-semibold shadow-md active:scale-[0.98] transition-transform" href="https://calendar.app.google/cgFFiYMX15akhNwZ9" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+<span class="">Agendar tu primera asesoría gratis</span>
+</a>
+<a class="w-full h-12 rounded-xl bg-surface-container-high hover:bg-surface-bright text-primary font-label-lg text-label-lg flex items-center justify-center gap-space-xs active:scale-[0.98] transition-transform" href="https://wa.me/573135829941" rel="noopener" target="_blank"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.19 8.19 0 0 1-5.82 2.41h-.01c-1.47 0-2.91-.39-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.204 8.204 0 0 1-1.26-4.4c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.07-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.17 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"></path></svg><span class="">Escribir por WhatsApp</span></a>
+</div>
+</section>
+<!-- 10. BOTÓN FLOTANTE PERSISTENTE OFICIAL DE WHATSAPP -->
+<a aria-label="Hablar por WhatsApp con Stipk Palacio" class="fixed right-4 bottom-20 z-50 flex items-center gap-2 bg-[#25D366] text-white px-4 py-3 rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.4)] active:scale-95 transition-all" href="https://wa.me/573135829941" rel="noopener" target="_blank">
+<svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+<path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.19 8.19 0 0 1-5.82 2.41h-.01c-1.47 0-2.91-.39-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.204 8.204 0 0 1-1.26-4.4c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.07-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.17 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"></path>
+</svg>
+<span class="font-label-md text-label-md font-bold tracking-wide">WhatsApp</span>
+</a>
+<!-- Micro-interacción: Acordeones de FAQ -->
+<script>
+    document.querySelectorAll('.faq-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector('.faq-icon');
+        const isOpen = !content.classList.contains('hidden');
+
+        document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+        document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = 'rotate(0deg)');
+
+        if (!isOpen) {
+          content.classList.remove('hidden');
+          icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+  </script>
+</div><footer class="w-full bg-surface-container-lowest px-gutter-mobile py-space-xl mt-space-xl flex flex-col gap-space-md"><div class="flex flex-col gap-space-xs items-start"><img alt="Stipk Palacio Díaz Contador" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmVLE4ZP3yPPnPAJjAu5aM1P2gQz-XUbBALTwtnpp0X12vJmkGiSiHFAYbpitDanacQflvnGWpVFEk4Lzefi3o03hjkoIMUgbphgu3aaEL3FWIYxy4nysj-yFYDbTxtBnGMnTJcpbJm8imOpvycd_WFDzS-AogyMgWX-XHyOEN19tiu5c_5R5H2kxr5jdKyMYepNrENGOLVdcJ34LhO_u5hR49NBSlC8yqMHhl7LMPQe3J1qUKQOm8ZtQng_2gFf-oH6E"><p class="font-body-md text-body-md text-on-surface-variant">Contador Público &amp; Revisor Fiscal en Cartagena, Colombia. Especialista en auditoría forense y control tributario.</p></div><div class="flex flex-col gap-space-sm py-space-sm"><a class="flex items-center gap-space-sm text-on-surface hover:text-primary transition-colors min-h-[44px]" href="mailto:stipkpalacio@gmail.com"><span class="material-symbols-outlined text-primary text-[20px]">mail</span><span class="font-label-md text-label-md">stipkpalacio@gmail.com</span></a><a class="flex items-center gap-space-sm text-on-surface hover:text-primary transition-colors min-h-[44px]" href="https://wa.me/573135829941" rel="noopener" target="_blank"><svg class="w-5 h-5 fill-current text-primary" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.19 8.19 0 0 1-5.82 2.41h-.01c-1.47 0-2.91-.39-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.204 8.204 0 0 1-1.26-4.4c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.07-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.17 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"></path></svg><span class="font-label-md text-label-md">+57 313 582 9941</span></a><a class="flex items-center gap-space-sm text-on-surface hover:text-primary transition-colors min-h-[44px]" href="https://stipkpalacio.com" rel="noopener" target="_blank"><span class="material-symbols-outlined text-primary text-[20px]">language</span><span class="font-label-md text-label-md">stipkpalacio.com</span></a><div class="flex items-center gap-space-sm text-on-surface-variant min-h-[44px]"><span class="material-symbols-outlined text-primary text-[20px]">location_on</span><span class="font-label-md text-label-md">Cartagena de Indias, Bolívar</span></div></div><div class="flex flex-wrap gap-x-space-md gap-y-space-xs text-on-surface-variant font-label-sm text-label-sm"><a class="hover:text-primary py-space-xs" data-path="servicios" href="#">Servicios Fiscales</a><a class="hover:text-primary py-space-xs" data-path="experiencia" href="#">Trayectoria</a><a class="hover:text-primary py-space-xs" data-path="politica-privacidad" href="#">Privacidad</a></div><p class="font-label-sm text-label-sm text-on-surface-variant opacity-80 pt-space-sm">© 2026 Stipk Palacio Díaz. Todos los derechos reservados.&nbsp;</p></footer></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-4px_20px_rgba(0,0,0,0.3)]" data-active-classes="text-primary font-label-md"><div class="flex justify-around items-center h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center gap-1 w-16 h-14 transition-colors min-h-[44px] text-primary font-label-md" data-path="inicio-despacho" href="#"><span class="material-symbols-outlined text-[22px]">corporate_fare</span><span class="font-label-sm text-label-sm">Inicio</span></a><a class="flex flex-col items-center justify-center gap-1 w-16 h-14 text-on-surface-variant hover:text-on-surface transition-colors min-h-[44px]" data-path="servicios" href="#"><span class="material-symbols-outlined text-[22px]">account_balance</span><span class="font-label-sm text-label-sm">Servicios</span></a><a class="flex flex-col items-center justify-center gap-1 w-16 h-14 text-on-surface-variant hover:text-on-surface transition-colors min-h-[44px]" data-path="experiencia" href="#"><span class="material-symbols-outlined text-[22px]">verified</span><span class="font-label-sm text-label-sm">Perfil</span></a><a class="flex flex-col items-center justify-center gap-1 w-16 h-14 text-on-surface-variant hover:text-on-surface transition-colors min-h-[44px]" data-path="contacto-oficina" href="#"><span class="material-symbols-outlined text-[22px]">quick_reference</span><span class="font-label-sm text-label-sm">Contacto</span></a></div></nav>
+
+</body></html>
